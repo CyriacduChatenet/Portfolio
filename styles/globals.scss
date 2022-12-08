@@ -1,3 +1,5 @@
+@import './fonts.scss';
+
 html,
 body {
   padding: 0;
@@ -23,4 +25,8 @@ a {
     color: white;
     background: black;
   }
+}
+
+h1 {
+  font-family: 'NeueMachina';
 }
