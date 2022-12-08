@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import connectToDatabase from "@/utils/db";
-import Project from "@/models/project";
+import connectToDatabase from '@/utils/db';
+import Project from '@/models/project';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     await connectToDatabase();
-    if(req.method === "POST") {
+    if(req.method === 'POST') {
         try {
             const project = await Project.create(req.body);
             res.status(200).json({success: true, data: project});
