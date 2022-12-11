@@ -6,7 +6,7 @@ import Navbar from '@/components/navbar';
 interface IProps {
   children: ReactNode;
   title: string;
-  description: string;
+  description?: string;
 }
 
 const Layout: FC<IProps> = ({ title, description, children }) => {
