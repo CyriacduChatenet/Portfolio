@@ -1,7 +1,5 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 
-interface IProps {};
-
 const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetStateAction<{}>>, errorStateMutator: Dispatch<SetStateAction<any>>, body?: Object) => {
     const fetchData = async () => {
         try {
@@ -12,10 +10,12 @@ const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetSta
             });
 
             const responseJSON = await response.json();
-            dataStateMutator(responseJSON);
+            console.log(responseJSON);
+            return dataStateMutator(responseJSON);
         }
         catch(err) {
-            errorStateMutator(err)
+            console.log(err);
+            return errorStateMutator(err)
         }
     };
 
