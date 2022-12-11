@@ -26,7 +26,7 @@ const BaselineFooter: NextComponentType = () => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.time}>{Math.round(count)}h of developement</p>
+      <p className={styles.time}>{Math.round(count)}h of developement this year</p>
       <a href="" className={styles.talksButton} id={styles.mobileLink}>
         My last talk
       </a>
