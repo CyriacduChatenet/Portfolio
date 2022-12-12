@@ -2,6 +2,8 @@ import Head from "next/head";
 import { FC, ReactNode } from "react";
 
 import Navbar from "@/components/navbar";
+import Menu from "@/components/menu";
+import useMenu from "@/contexts/useMenu";
 
 
 interface IProps {
@@ -12,6 +14,7 @@ interface IProps {
 
 
 const Layout: FC<IProps> = ({ title, description, children }) => {
+  const { isOpen } = useMenu();
 
   return (
     <>
@@ -21,6 +24,7 @@ const Layout: FC<IProps> = ({ title, description, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar displayMenu={true} />
+      {isOpen ? <Menu /> : null}
       {children}
       <footer></footer>
     </>
