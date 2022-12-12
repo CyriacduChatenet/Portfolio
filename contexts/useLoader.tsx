@@ -1,4 +1,4 @@
-import { createContext, Dispatch, FC, ReactNode, SetStateAction, useContext, useState } from "react";
+import { createContext, Dispatch, FC, memo, ReactNode, SetStateAction, useContext, useState } from "react";
 
 type Context = {
     counter: number;
@@ -19,7 +19,7 @@ const loaderContext = createContext<Context>({
     setIsLoading: () => {},
 });
 
-export const LoaderProvider: FC<IProps> = ({ children }) => {
+const LoaderProvider: FC<IProps> = ({ children }) => {
     const [counter, setCounter] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -36,6 +36,6 @@ export const LoaderProvider: FC<IProps> = ({ children }) => {
     );
 };
 
-const useLoader = () => useContext<Context>(loaderContext);
+export const useLoader = () => useContext<Context>(loaderContext);
 
-export default useLoader;
+export default memo(LoaderProvider);

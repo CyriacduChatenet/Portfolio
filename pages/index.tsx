@@ -1,7 +1,7 @@
 import BaselineFooter from "@/components/baselineFooter";
 import Layout from "@/components/layout";
 import Loader from "@/components/loader";
-import useLoader from "@/contexts/useLoader";
+import { useLoader } from "@/contexts/useLoader";
 
 import styles from "@/styles/Home.module.scss";
 

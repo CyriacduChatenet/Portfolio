@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 
-import { LoaderProvider } from "@/contexts/useLoader";
+import LoaderProvider from "@/contexts/useLoader";
 import { MenuProvider } from "@/contexts/useMenu";
 
 import "@/styles/globals.scss";

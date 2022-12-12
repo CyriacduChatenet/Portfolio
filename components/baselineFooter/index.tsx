@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, memo, useEffect, useState } from "react";
 
 import styles from "@/components/baselineFooter/style.module.scss";
 import WakatimeService from "@/services/wakatime.service";
@@ -47,4 +47,4 @@ const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
   );
 };
 
-export default BaselineFooter;
+export default memo(BaselineFooter);

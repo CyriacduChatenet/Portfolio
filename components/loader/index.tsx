@@ -1,8 +1,8 @@
-import { FC, useEffect, useState } from "react";
+import { FC, memo, useEffect, useState } from "react";
 
 import Navbar from "@/components/navbar";
 import BaselineFooter from "@/components/baselineFooter";
-import useLoader from "@/contexts/useLoader";
+import { useLoader } from "@/contexts/useLoader";
 
 import styles from "@/components/loader/style.module.scss";
 
@@ -52,4 +52,4 @@ const Loader: FC = () => {
   );
 };
 
-export default Loader;
+export default memo(Loader);
