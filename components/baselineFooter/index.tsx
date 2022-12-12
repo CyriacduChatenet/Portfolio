@@ -1,14 +1,14 @@
 import { NextComponentType } from "next";
+import { useEffect, useState } from "react";
 
 import styles from "@/components/baselineFooter/style.module.scss";
 import WakatimeService from "@/services/wakatime.service";
-import { useEffect, useState } from "react";
+import { HOUR } from "@/constants";
 
 const BaselineFooter: NextComponentType = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const HOUR = 3600;
+  
   let count = 0;
 
   const wakatimeService = new WakatimeService();
