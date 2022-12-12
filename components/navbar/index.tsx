@@ -3,14 +3,16 @@ import Link from "next/link";
 import gsap from "gsap";
 
 import styles from "@/components/navbar/style.module.scss";
+import useMenu from "@/contexts/useMenu";
 
 interface IProps {
   displayMenu: boolean;
 }
 
 const Navbar: FC<IProps> = ({ displayMenu }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [dateNow, setDateNow] = useState('');
+
+  const { isOpen, setIsOpen } = useMenu();
 
   const firstLine = useRef(null);
   const secondLine = useRef(null);
@@ -27,10 +29,6 @@ const Navbar: FC<IProps> = ({ displayMenu }) => {
     setDateNow(`${day}/${month}/${year}`)
   }
 
-  useEffect(() => {
-    handleFormatDate();
-  }, [])
-
   const handleClickAnimate = () => {
     if (isOpen === false) {
       gsap.to(firstLine.current, { rotation: 45, y: 9, ease: "ease-out" });
@@ -42,6 +40,10 @@ const Navbar: FC<IProps> = ({ displayMenu }) => {
       setIsOpen(!isOpen);
     }
   };
+
+  useEffect(() => {
+    handleFormatDate();
+  }, []);
 
   return (
     <nav className={styles.navbar}>

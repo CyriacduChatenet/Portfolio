@@ -26,7 +26,7 @@ export const LoaderProvider: FC<IProps> = ({ children }) => {
     if(counter === 100) {
         setTimeout(() => {
             setIsLoading(true);
-        }, 2000);
+        }, 1000);
     }
 
     return (

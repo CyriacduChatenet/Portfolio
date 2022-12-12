@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import { FC, ReactNode } from 'react';
+import Head from "next/head";
+import { FC, ReactNode } from "react";
 
-import Navbar from '@/components/navbar';
+import Navbar from "@/components/navbar";
 
 
 interface IProps {
@@ -12,6 +12,7 @@ interface IProps {
 
 
 const Layout: FC<IProps> = ({ title, description, children }) => {
+
   return (
     <>
       <Head>
