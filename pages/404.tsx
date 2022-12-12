@@ -15,7 +15,7 @@ const NotFoundPage = () => {
                 <h1 className={styles.statusCode}>404</h1>
                 <p className={styles.errorMessage}>Page not found</p>
             </div>
-            <BaselineFooter />
+            <BaselineFooter displayTalks={true} />
         </main>
       </Layout>
     </div>

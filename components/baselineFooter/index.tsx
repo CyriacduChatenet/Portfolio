@@ -5,7 +5,12 @@ import WakatimeService from "@/services/wakatime.service";
 import { HOUR } from "@/constants";
 
 
-const BaselineFooter: FC = () => {
+interface IProps {
+  displayTalks : boolean;
+};
+
+
+const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
@@ -27,7 +32,8 @@ const BaselineFooter: FC = () => {
   return (
     <div className={styles.container}>
       <p className={styles.time}>{Math.round(count)}h of developement this year</p>
-      <a href="" className={styles.talksButton} id={styles.mobileLink}>
+      {displayTalks ? <>
+        <a href="" className={styles.talksButton} id={styles.mobileLink}>
         My last talk
       </a>
       <div id={styles.desktopLink}>
@@ -36,6 +42,7 @@ const BaselineFooter: FC = () => {
           How design token will change our life as designer / developper ?{" "}
         </a>
       </div>
+      </> : null}
     </div>
   );
 };

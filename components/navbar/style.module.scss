@@ -24,6 +24,20 @@
     background-color: $color-primary;
 }
 
+.loader {
+    border: 5px solid transparent;
+    border-top: 5px solid $color-primary;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 @media all and (min-width: 1024px) {
     .navbar {
         padding: 2rem $padding-desktop;
