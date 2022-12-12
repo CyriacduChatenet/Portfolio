@@ -2,6 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 import IProject from "@/types/project";
 
+
 const ProjectSchema = new Schema<IProject>({
     title : String,
     link_title : String,

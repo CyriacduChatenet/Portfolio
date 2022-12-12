@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import '@/styles/variables.scss';
 
 .container {
   background-image: url('../assets/images/background.jpg');
@@ -34,13 +34,13 @@
 
 .title {
   text-transform: uppercase;
-  font-family: 'Helvetica Neue';
+  font-family: $font-thirdary;
   font-weight: 500;
 }
 
 .devTitle {
   text-transform: uppercase;
-  font-family: 'SaolDisplay';
+  font-family: $font-secondary;
 }
 
 .description {

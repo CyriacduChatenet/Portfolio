@@ -1,11 +1,11 @@
-import { NextComponentType } from "next";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import styles from "@/components/baselineFooter/style.module.scss";
 import WakatimeService from "@/services/wakatime.service";
 import { HOUR } from "@/constants";
 
-const BaselineFooter: NextComponentType = () => {
+
+const BaselineFooter: FC = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   

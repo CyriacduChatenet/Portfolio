@@ -3,6 +3,7 @@ import Layout from "@/components/layout";
 
 import styles from "@/styles/Home.module.scss";
 
+
 const HomePage = () => {
   return (
     <div className={styles.container}>

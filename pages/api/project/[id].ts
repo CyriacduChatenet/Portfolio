@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import Project from '@/models/project';
 
+
 export default async function handler (req: NextApiRequest, res: NextApiResponse) {
     if(req.method === 'GET') {
         try {

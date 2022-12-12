@@ -1,4 +1,4 @@
-@import './fonts.scss';
+@import '@/styles/variables.scss';
 
 * {
   margin: 0;
@@ -6,6 +6,6 @@
   box-sizing: border-box;
   
   text-decoration: none;
-  font-family: 'NeueMachina';
+  font-family: $font-primary;
   list-style: none;
 }

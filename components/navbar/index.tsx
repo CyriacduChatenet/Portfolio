@@ -5,6 +5,7 @@ import gsap from 'gsap';
 
 import styles from '@/components/navbar/style.module.scss';
 
+
 const Navbar: NextComponentType = () => {
     const [isOpen, setIsOpen] = useState(false);
 

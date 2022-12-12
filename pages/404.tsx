@@ -3,6 +3,7 @@ import Layout from "@/components/layout";
 
 import styles from "@/styles/404.module.scss";
 
+
 const NotFoundPage = () => {
   return (
     <div className={styles.container}>

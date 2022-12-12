@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import connectToDatabase from '@/utils/db';
 import Project from '@/models/project';
 
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     await connectToDatabase();
     if(req.method === 'GET') {
