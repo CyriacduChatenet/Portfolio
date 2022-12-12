@@ -1,50 +1,50 @@
-@import '@/styles/variables.scss';
-
+@import "@/styles/variables.scss";
 
 .container {
-    position: absolute;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem 0 1rem 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem 0 1rem 0;
 
-    background-image: url('../../assets/images/background.jpg');
+  background-image: url("../../assets/images/background.jpg");
 }
 
 .content {
-    padding: 0rem $padding-mobile 0 $padding-mobile;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem $padding-mobile 0 $padding-mobile;
+  height: 50%;
 }
 
 .margin {
-    padding: 0rem $padding-mobile 0 $padding-mobile;
+  padding: 0rem $padding-mobile 0 $padding-mobile;
 }
 
+.percentage {
+    margin: 2rem 0;
+    font-size: 6rem;
+    font-family: $font-primary;
+    font-weight: 400;
+  }
+
+  .description {
+    text-align: center;
+  }
+
 @media all and (min-width: 1024px) {
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 $padding-desktop 0rem $padding-desktop;
-        height: 50%;
-    }
 
-    .margin {
-        padding: 0 $padding-desktop 0rem $padding-desktop;
-    }
+  .margin {
+    padding: 0 $padding-desktop 0rem $padding-desktop;
+  }
 
-    .percentage {
-        margin: 2rem 0;
-        font-size: 8rem;
-        font-family: $font-primary;
-        font-weight: 400;
-    }
-
-    .description {
-        text-align: center;
-    }
+  .percentage {
+    font-size: 8rem;
+  }
 }

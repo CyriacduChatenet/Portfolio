@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 
@@ -10,9 +10,26 @@ interface IProps {
 
 const Navbar: FC<IProps> = ({ displayMenu }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [dateNow, setDateNow] = useState('');
 
   const firstLine = useRef(null);
   const secondLine = useRef(null);
+
+  const handleFormatDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    if(month < 12) {
+      month = 1
+    };
+    setDateNow(`${day}/${month}/${year}`)
+  }
+
+  useEffect(() => {
+    handleFormatDate();
+  }, [])
 
   const handleClickAnimate = () => {
     if (isOpen === false) {
@@ -40,7 +57,7 @@ const Navbar: FC<IProps> = ({ displayMenu }) => {
         </>
       ) : (
         <>
-          <p className={styles.update}>Last update : 12/12/2022</p>
+          <p className={styles.update}>Last update : {dateNow}</p>
           <div className={styles.loader}></div>
         </>
       )}
