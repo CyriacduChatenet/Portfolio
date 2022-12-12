@@ -37,16 +37,19 @@
   text-transform: uppercase;
   font-family: $font-thirdary;
   font-weight: 500;
+  opacity: 0;
 }
 
 .devTitle {
   text-transform: uppercase;
   font-family: $font-secondary;
+  opacity: 0;
 }
 
 .description {
   padding: 1rem 0;
   font-size: 0.9rem;
+  opacity: 0;
 }
 
 .about {

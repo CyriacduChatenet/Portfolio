@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 import BaselineFooter from "@/components/baselineFooter";
 import Layout from "@/components/layout";
 import Loader from "@/components/loader";
@@ -8,6 +11,22 @@ import styles from "@/styles/Home.module.scss";
 
 const HomePage = () => {
   const { isLoading } = useLoader();
+
+  const creativeTitle = useRef(null);
+  const developerTitle = useRef(null);
+  const description = useRef(null);
+
+  const handleAnimate = () => {
+    gsap.fromTo(creativeTitle.current, {x:-200, opacity:0}, {x:0, duration: 2.5, ease: "power4.in", opacity:100});
+    gsap.fromTo(developerTitle.current, {x:200, opacity:0}, {x:0, duration: 2.5, ease: "power4.in", opacity:100});
+    gsap.fromTo(description.current, {opacity:0, y:-10}, {y:0, duration: 2.5, opacity:100});
+  };
+
+  useEffect(() => {
+      setTimeout(() => {
+        handleAnimate();
+    }, 3000);
+  }, []);
 
   return (
     <>
@@ -20,10 +39,10 @@ const HomePage = () => {
           <main className={styles.main}>
               <div className={styles.content}>
                 <div className={styles.titleContainer}>
-                  <p className={styles.title}>Creative</p>
-                  <p className={styles.devTitle}>Developer</p>
+                  <p className={styles.title} ref={creativeTitle}>Creative</p>
+                  <p className={styles.devTitle} ref={developerTitle}>Developer</p>
                 </div>
-                <p className={styles.description}>
+                <p className={styles.description} ref={description}>
                   Ux - Ui designer X developper fullstack
                 </p>
               </div>
