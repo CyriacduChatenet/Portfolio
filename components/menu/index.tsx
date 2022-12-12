@@ -43,7 +43,7 @@ const Menu: NextComponentType = () => {
                     <Link href={'/about'} className={styles.navLink} onClick={() => setIsOpen(false)} ref={aboutMenuEntry}>About</Link>
                 </li>
                 <li>
-                    <Link href={'/contact'} className={styles.navLink} onClick={() => setIsOpen(false)} ref={contactMenuEntry}>Contacts</Link>
+                    <Link href={'/contact'} className={styles.navLink} onClick={() => setIsOpen(false)} ref={contactMenuEntry}>Contact</Link>
                 </li>
             </ul>
         </div>
