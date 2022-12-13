@@ -5,6 +5,8 @@ import BaselineFooter from "@/components/baselineFooter";
 import Layout from "@/components/layout";
 import Loader from "@/components/loader";
 import { useLoader } from "@/contexts/useLoader";
+import useMenu from "@/contexts/useMenu";
+import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from "@/styles/Home.module.scss";
 
@@ -15,6 +17,11 @@ const HomePage = () => {
   const creativeTitle = useRef(null);
   const developerTitle = useRef(null);
   const description = useRef(null);
+
+  const { isOpen } = useMenu();
+
+  useBodyScroll(isOpen);
+  useBodyScrollLock(isOpen);
 
   const handleAnimate = () => {
     gsap.fromTo(creativeTitle.current, {x:-200, opacity:0}, {x:0, duration: 2.5, ease: "power4.in", opacity:100});

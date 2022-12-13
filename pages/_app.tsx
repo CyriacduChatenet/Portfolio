@@ -5,6 +5,7 @@ import { MenuProvider } from "@/contexts/useMenu";
 
 import "@/styles/globals.scss";
 
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <LoaderProvider>
