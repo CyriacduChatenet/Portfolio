@@ -40,11 +40,17 @@
     display: flex;
     align-items: center;
     justify-content:  space-between;
-    width: 50%;
+    width: 60%;
   }
 
   .meetupLink {
     color: $color-primary;
     text-decoration: underline;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1200px) {
+  #desktopLink {
+    width: 60%;
   }
 }
