@@ -1,0 +1,42 @@
+@import '@/styles/variables.scss';
+
+.content {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+}
+
+.profilePicture {
+    margin: 2rem 0;
+    border-radius: 20px;
+}
+
+.socialNetworks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 12rem;
+}
+
+.socialNetwork > a {
+    color: $color-primary;
+    line-height: 1.5rem;
+}
+
+@media all and (min-width: 1024px) {
+    .content {
+        flex-direction: row;
+    }
+
+    .socialNetworks {
+        height: 20rem;
+        margin: 5rem 0;
+    }
+
+    .socialNetwork > a {
+        font-size: 1.5rem
+    }
+};

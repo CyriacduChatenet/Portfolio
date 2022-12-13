@@ -12,8 +12,8 @@ interface IProps {
 const BottomPageControl: FC<IProps> = ({ link, label }) => {
   return (
     <div className={styles.container}>
-        <Link href={"/contact"} className={styles.contactLink}>
-          Contact
+        <Link href={link} className={styles.contactLink}>
+          {label}
         </Link>
     </div>
   );
