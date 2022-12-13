@@ -28,9 +28,12 @@
     font-size: 3rem;
 }
 
-.videoPlayer {
-    margin: 3rem 0 1rem 0;
+.videoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    margin: 3rem 0;
 }
 
 @media all and (min-width: 1024px) {
@@ -48,17 +51,5 @@
 
     .title {
         font-size: 5rem;
-    }
-
-    .videoPlayer {
-        margin: 3rem 0;
-        width: 80%;
-    }
-
-    .videoContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
     }
 }

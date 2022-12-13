@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import ReactPlayer from 'react-player/youtube'
 
 import BottomPageControl from "@/components/bottomPageControl";
 import Header from "@/components/header";
@@ -10,6 +11,8 @@ import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from "@/pages/talks/style.module.scss";
+import useEasterEgg from "@/contexts/displayEasterEgg";
+import EasterEggModal from "@/components/talks/easterEggModal";
 
 
 const TalksPage = () => {
@@ -17,6 +20,7 @@ const TalksPage = () => {
     const titleRef = useRef(null);
 
     const { isOpen } = useMenu();
+    const { displayEasterEgg } = useEasterEgg();
 
     useAnimateMenu(isOpen, menuBackgroundRef);
     useBodyScroll(isOpen);
@@ -50,12 +54,7 @@ const TalksPage = () => {
             <div className={styles.line}></div>
             <h2 className={styles.title} ref={titleRef}>Tech Ctrl</h2>
             <div className={styles.videoContainer}>
-              <video controls className={styles.videoPlayer}>
-                <source
-                  src="https://www.youtube.com/watch?v=r_JTTswNdIs"
-                  type="video/mp4"
-                />
-              </video>
+              {displayEasterEgg ? <EasterEggModal /> : <ReactPlayer url={'https://www.youtube.com/watch?v=r_JTTswNdIs'} className={styles.videoPlayer}  />}
             </div>
             <TalksAboutSection />
             <div className={styles.line}></div>
