@@ -1,0 +1,36 @@
+@import '@/styles/variables.scss';
+
+
+.skills {
+    margin: 3rem 0 0 0;
+}
+
+.skillsTitle {
+    font-weight: $font-regular;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.block > p {
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+@media all and (min-width: 1024px) {
+    .container {
+        margin: 4rem 0;
+    }
+
+    .skillsTitle {
+        font-weight: $font-regular;
+        font-size: 5rem;
+        text-transform: uppercase;
+    }
+
+    .skillsList {
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+};
