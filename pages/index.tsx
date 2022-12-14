@@ -50,7 +50,7 @@ const HomePage = () => {
                   <p className={styles.devTitle} ref={developerTitle}>Developer</p>
                 </div>
                 <p className={styles.description} ref={description}>
-                  Ux - Ui designer X developper fullstack
+                  Ux - Ui designer X developer fullstack
                 </p>
               </div>
             <BaselineFooter displayTalks={true} />
