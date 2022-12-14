@@ -1,16 +1,21 @@
 import { FC, memo, useEffect, useState } from "react";
 
-import Navbar from "@/components/navbar";
 import BaselineFooter from "@/components/baselineFooter";
 import { useLoader } from "@/contexts/useLoader";
 
 import styles from "@/components/loader/style.module.scss";
+import { useBodyScrollLock } from "@/hooks/useBodyScroll";
+import LoaderNavbar from "./navbar";
 
 
 const Loader: FC = () => {
     const [message, setMessage] = useState('');
+    const [lockScroll, setLockScroll] = useState(true);
 
     const { counter, setCounter } = useLoader();
+
+
+    useBodyScrollLock(lockScroll);
 
     const handleChangeDescription = () => {
         if(counter <= 30) {
@@ -40,7 +45,7 @@ const Loader: FC = () => {
 
   return (
     <div className={styles.container}>
-      <Navbar displayMenu={false} />
+      <LoaderNavbar />
       <section className={styles.content}>
         <h1 className={styles.percentage}>{counter}%</h1>
         <p className={styles.description}>{message}</p>

@@ -11,22 +11,6 @@
     padding: 2rem $padding-mobile;
 }
 
-.logoLink {
-    color: $color-secondary;
-}
-
-.menuButton {
-    border: none;
-    background-color: transparent;
-}
-
-.line {
-    width: 2rem;
-    height: 2px;
-    margin: 1rem 0;
-    background-color: $color-primary;
-}
-
 .loader {
     border: 5px solid transparent;
     border-top: 5px solid $color-primary;

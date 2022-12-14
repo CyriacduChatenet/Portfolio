@@ -1,33 +1,16 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 
 import styles from "@/components/navbar/style.module.scss";
 import useMenu from "@/contexts/useMenu";
 
-interface IProps {
-  displayMenu: boolean;
-}
 
-const Navbar: FC<IProps> = ({ displayMenu }) => {
-  const [dateNow, setDateNow] = useState('');
-
+const Navbar: FC = () => {
   const { isOpen, setIsOpen } = useMenu();
 
   const firstLine = useRef(null);
-  const secondLine = useRef(null);
-
-  const handleFormatDate = () => {
-    const date = new Date();
-    const year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    const day = date.getDate();
-
-    if(month < 12) {
-      month = 1
-    };
-    setDateNow(`${day}/${month}/${year}`)
-  }
+  const secondLine = useRef(null)
 
   const handleClickAnimate = () => {
     if (isOpen === false) {
@@ -41,28 +24,15 @@ const Navbar: FC<IProps> = ({ displayMenu }) => {
     }
   };
 
-  useEffect(() => {
-    handleFormatDate();
-  }, []);
-
   return (
     <nav className={styles.navbar}>
-      {displayMenu ? (
-        <>
-          <Link href={"/"} className={styles.logoLink}>
+       <Link href={"/"} className={styles.logoLink} style={isOpen ? {color: 'white'} : {color: 'black'}}>
             Cyriac du Chatenet
           </Link>
           <button className={styles.menuButton} onClick={handleClickAnimate}>
-            <div className={styles.line} ref={firstLine}></div>
-            <div className={styles.line} ref={secondLine}></div>
+            <div className={styles.line} ref={firstLine} style={isOpen ? {backgroundColor: 'white'} : {backgroundColor: 'black'}}></div>
+            <div className={styles.line} ref={secondLine} style={isOpen ? {backgroundColor: 'white'} : {backgroundColor: 'black'}}></div>
           </button>
-        </>
-      ) : (
-        <>
-          <p className={styles.update}>Last update : {dateNow}</p>
-          <div className={styles.loader}></div>
-        </>
-      )}
     </nav>
   );
 };

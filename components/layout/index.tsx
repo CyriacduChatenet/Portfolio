@@ -23,7 +23,7 @@ const Layout: FC<IProps> = ({ title, description, children }) => {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar displayMenu={true} />
+      <Navbar />
       {isOpen ? <Menu /> : null}
       {children}
       <footer></footer>

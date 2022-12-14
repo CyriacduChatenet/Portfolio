@@ -2,7 +2,7 @@
 
 .container {
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,5 +46,9 @@
 
   .percentage {
     font-size: 8rem;
+  }
+
+  .content{
+    margin: 10rem 0;
   }
 }

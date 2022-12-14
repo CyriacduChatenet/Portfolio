@@ -1,23 +1,26 @@
 @import '@/styles/variables.scss';
 
 .content {
-    min-height: 90vh;
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
     padding: 3rem $padding-mobile 0 $padding-mobile;
+    background-color: $color-thirdary;
 }
 
 .navList {
-    z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 25rem;
+    margin-top: 5rem;
     list-style: none;
 }
 
 .navLink {
-    color: $color-primary;
+    color: $color-secondary;
     font-size: 3rem;
 }
 
@@ -30,6 +33,7 @@
 
       .navList {
         height: 75%;
+        padding-left: 40rem;
       }
 
       .navLink {
