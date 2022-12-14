@@ -6,64 +6,99 @@
 }
 
 @font-face {
-  font-family: "NeueMachina";
-  src: url("../assets/fonts/Neue-Machina/NeueMachina-Light.otf") format("opentype");
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-ExtraLight.ttf") format("truetype");
   font-style: normal;
   font-weight: 200;
 }
 
 @font-face {
-  font-family: "NeueMachina";
-  src: url("../assets/fonts/Neue-Machina/NeueMachina-Regular.otf") format("opentype");
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-ExtraLightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-LightItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "NeueMachina";
-  src: url("../assets/fonts/Neue-Machina/NeueMachina-Ultrabold.otf") format("opentype");
-  font-style: normal;
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../assets/fonts/Helvetica-Neue/Helvetica-Neue-LTW0697BlkCnObl/Helvetica-Neue-LTW0697BlkCnObl.ttf") format("truetype");
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Italic.ttf") format("truetype");
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("../assets/fonts/Helvetica-Neue/Helvetica-Neue-LTW0693BlkExtObl/Helvetica-Neue-LTW0693BlkExtObl.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 900;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../assets/fonts/Helvetica-Neue/Helvetica-Neue-W01-87-Hv-Cn-Obl/Helvetica-Neue-W01-87-Hv-Cn-Obl.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../assets/fonts/Helvetica-Neue/Helvetica-Neue-Medium-Extended/Helvetica-Neue-Medium-Extended.ttf") format("truetype");
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Medium.ttf") format("truetype");
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("../assets/fonts/Helvetica-Neue/Helvetica-Neue-W01-66-Medium-It/Helvetica-Neue-W01-66-Medium-It.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-MediumItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 500;
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("../assets/fonts/Helvetica-Neue/Helvetica-Neue-UltraLight/Helvetica-Neue-UltraLight.ttf") format("truetype");
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-SemiBold.ttf") format("truetype");
   font-style: normal;
-  font-weight: light;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-SemiBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Plus_Jakarta_Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-ExtraBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 800;
 }
