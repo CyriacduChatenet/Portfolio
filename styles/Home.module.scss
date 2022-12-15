@@ -5,7 +5,7 @@
   background-image: url('../assets/images/background.jpg');
   background-size: cover;
   background-position: center;
-  max-height: 100vh;
+  height: 100vh;
 }
 
 .main {
@@ -13,8 +13,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  min-height: 90vh;
-  padding: 8rem $padding-mobile 0 $padding-mobile;
+  height: 100vh;
+  padding: 16rem $padding-mobile 0 $padding-mobile;
 }
 
 .content {
@@ -69,6 +69,10 @@
 
 #desktopLink {
   display: none;
+}
+
+.position {
+  height: 100%;
 }
 
 @media all and (min-width: 1024px) {
