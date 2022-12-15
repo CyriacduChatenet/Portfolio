@@ -34,7 +34,7 @@ const HomePage = () => {
 
   return (
     <>
-      {isLoading === true ? <Loader /> : null}
+      {isLoading === false ? <Loader /> : null}
       <div className={styles.container}>
         <Layout
           title={"Create Next App"}
