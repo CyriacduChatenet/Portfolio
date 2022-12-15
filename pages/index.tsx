@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 import BaselineFooter from "@/components/baselineFooter";
 import Layout from "@/components/layout";
@@ -21,8 +22,14 @@ const HomePage = () => {
   useBodyScroll(isOpen);
   useBodyScrollLock(isOpen);
 
+  const handleAnimate = () => {
+    gsap.fromTo(creativeTitle.current, {opacity: 0, x:-20}, {delay:8, duration: 6, ease: 'power4.inOut', opacity: 100, x:0});
+    gsap.fromTo(developerTitle.current, {opacity: 0, x:-20}, {delay:8, duration: 6, ease: 'power4.inOut', opacity: 100, x:0});
+  };
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    handleAnimate();
   }, []);
 
   return (
