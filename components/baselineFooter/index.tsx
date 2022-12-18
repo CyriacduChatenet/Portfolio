@@ -45,7 +45,7 @@ const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
       <div id={styles.desktopLink}>
         <button className={styles.talksButton}>My last talk</button>
         <a href="" className={styles.meetupLink}>
-          {talksData[taklksLength-1].title}
+          How design token will change our life as designer / developper ?
         </a>
       </div>
       </> : null}
