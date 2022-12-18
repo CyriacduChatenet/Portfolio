@@ -11,6 +11,7 @@ import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from "@/styles/Home.module.scss";
 
+
 const HomePage = () => {
   const creativeTitle = useRef(null);
   const developerTitle = useRef(null);

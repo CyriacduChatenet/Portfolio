@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 
 
-const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetStateAction<{}>>, errorStateMutator: Dispatch<SetStateAction<any>>, body?: Object) => {
+const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetStateAction<never[] | []>>, errorStateMutator: Dispatch<SetStateAction<any>>, body?: Object) => {
     const fetchData = async () => {
         try {
             const response = await fetch(url, {
