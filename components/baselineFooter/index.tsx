@@ -15,6 +15,7 @@ interface IProps {
 const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
   let count = 0;
 
   const wakatimeService = new WakatimeService();
