@@ -44,8 +44,8 @@ const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
       </a>
       <div id={styles.desktopLink}>
         <button className={styles.talksButton}>My last talk</button>
-        <a href="" className={styles.meetupLink}>
-          How design token will change our life as designer / developper ?
+        <a href={talksData[0].video_link} target={'_blank'} className={styles.meetupLink} rel="noreferrer">
+          {talksData[0].event_title} - {talksData[0].title}
         </a>
       </div>
       </> : null}

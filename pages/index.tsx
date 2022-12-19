@@ -13,6 +13,7 @@ import styles from "@/styles/Home.module.scss";
 
 
 const HomePage = () => {
+
   const creativeTitle = useRef(null);
   const developerTitle = useRef(null);
   const description = useRef(null);
