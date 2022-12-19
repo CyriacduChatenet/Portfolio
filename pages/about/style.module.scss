@@ -1,4 +1,14 @@
 @import '@/styles/variables.scss';
 
 
-@media all and (min-width: 1024px) {}
+.container {
+    width: 100%;
+    padding: 6rem 2.5rem 0 2.5rem;
+}
+
+@media all and (min-width: 1024px) {
+    .container {
+        width: 100%;
+        padding: 6rem 8rem 0 8rem;
+    }
+}

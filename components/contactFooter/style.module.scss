@@ -1,0 +1,76 @@
+@import '@/styles/variables.scss';
+
+
+.container {
+    width: 100%;
+    padding: 3rem 2.5rem;
+    background-image: url('../../assets/images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px 20px 0 0;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem 0;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-primary;
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.title > span {
+    font-family: $font-secondary;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.socialNetworks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.socialNetwork {
+    color: $color-primary;
+}
+
+.copyright {
+    line-height: 1.5rem;
+}
+
+@media all and (min-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 8rem;
+    }
+
+    .title {
+        font-size: 8rem;
+    }
+
+    .footer {
+        flex-direction: row;
+    }
+
+    .socialNetworks {
+        width: 30%;
+        margin: 0;
+    }
+};
