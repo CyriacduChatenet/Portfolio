@@ -30,6 +30,6 @@ const talkSchema = new Schema<ITalk>({
     ],
 });
 
-const Talk = model<ITalk>('Talk', talkSchema);
+const Talk = model<ITalk>('talks', talkSchema);
 
 export default Talk;

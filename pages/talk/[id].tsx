@@ -48,13 +48,13 @@ const TalkPage = () => {
             <h3 className={styles.categoryTitle}>Social Networks</h3>
             <ul className={styles.socialNetworks}>
               <li className={styles.socialNetwork}>
-                <a href="" className={styles.socialNetworkLink}>Youtube</a>
+                <a href="https://www.youtube.com/@ctrlup" target={'_blank'} rel="noreferrer" className={styles.socialNetworkLink}>Youtube</a>
               </li>
               <li className={styles.socialNetwork}>
-                <a href="" className={styles.socialNetworkLink}>Linkedin</a>
+                <a href="https://www.linkedin.com/company/ctrlup/" target={'_blank'} rel="noreferrer" className={styles.socialNetworkLink}>Linkedin</a>
               </li>
               <li className={styles.socialNetwork}>
-                <a href="" className={styles.socialNetworkLink}>Website</a>
+                <a href="https://www.ctrlup.io/" target={'_blank'} rel="noreferrer" className={styles.socialNetworkLink}>Website</a>
               </li>
             </ul>
             </div>
