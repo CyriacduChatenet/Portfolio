@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import Link from "next/link";
 
 import Layout from "@/components/layout";
@@ -10,10 +8,6 @@ import styles from "@/pages/talks/style.module.scss";
 
 
 const TalksPage = () => {
-  const [talksData, setTalksData] = useState([]);
-  const [talksDataError, setTalksDataError] = useState({});
-
-  useFetch('/api/talks', 'GET', setTalksData, setTalksDataError);
 
   return (
     <Layout
@@ -34,11 +28,11 @@ const TalksPage = () => {
             className={styles.talkPreview}
           />
           <ul className={styles.talksList}>
-            {talksData.map((talk) =>  <li key={talk._id} className={styles.talkCard}>
-              <Link href={`/talk/${talk._id}`} className={styles.talkLink}>
-                {talk.event_title} - {talk.title}
+          <li className={styles.talkCard}>
+              <Link href={`/talk/design-tokens`} className={styles.talkLink}>
+                Tech Ctrl - How design token will change our life as designer / developper ?  
               </Link>
-            </li>)}
+            </li>
           </ul>
         </div>
       </div>
