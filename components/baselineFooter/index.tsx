@@ -15,11 +15,6 @@ interface IProps {
 const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [talksData, setTalksData] = useState([]);
-  const [talksDataError, setTalksDataError] = useState({});
-
-  useFetch('/api/talks', 'GET', setTalksData, setTalksDataError);
-  const taklksLength = talksData.length;
   let count = 0;
 
   const wakatimeService = new WakatimeService();
@@ -44,8 +39,8 @@ const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
       </a>
       <div id={styles.desktopLink}>
         <button className={styles.talksButton}>My last talk</button>
-        <a href={talksData[0].video_link} target={'_blank'} className={styles.meetupLink} rel="noreferrer">
-          {talksData[0].event_title} - {talksData[0].title}
+        <a href={'https://www.youtube.com/watch?v=r_JTTswNdIs'} target={'_blank'} className={styles.meetupLink} rel="noreferrer">
+          Tech Ctrl - How design token will change our life as designer / developper ?  
         </a>
       </div>
       </> : null}
