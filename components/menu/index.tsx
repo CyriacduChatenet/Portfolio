@@ -1,13 +1,18 @@
 import { NextComponentType } from "next";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import useMenu from "@/contexts/useMenu";
+import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
+import useFetch from "@/hooks/useFetch";
+import { Data } from "@/types/data";
 
 import styles from "@/components/menu/style.module.scss";
-import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
+
 
 const Menu: NextComponentType = () => {
+   const [projectsStateData, setProjectsStateData] = useState<Data>({});
+   const [projectsStateDataError, setProjectsStateDataError] = useState<Data>({});
 
   const homeMenuEntry = useRef(null);
   const projectsMenuEntry = useRef(null);
@@ -17,6 +22,8 @@ const Menu: NextComponentType = () => {
   const menuContainer = useRef(null);
 
   const { isOpen, setIsOpen } = useMenu();
+
+  useFetch('/api/projects', 'GET', setProjectsStateData, setProjectsStateDataError);
 
   useAnimateMenu(isOpen, menuContainer, [
     homeMenuEntry,
@@ -45,7 +52,7 @@ const Menu: NextComponentType = () => {
             onClick={() => setIsOpen(false)}
             ref={projectsMenuEntry}
           >
-            Projects (7)
+            Projects ({projectsStateData.data?.length})
           </Link>
         </li>
         <li>
@@ -55,7 +62,7 @@ const Menu: NextComponentType = () => {
             onClick={() => setIsOpen(false)}
             ref={talksMenuEntry}
           >
-            Talks
+            Talks (1)
           </Link>
         </li>
         <li>

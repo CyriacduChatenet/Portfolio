@@ -1,0 +1,12 @@
+@import '@/styles/variables.scss';
+
+
+.container {
+    padding: 6rem 2.5rem 0 2.5rem;
+}
+
+@media all and (min-width: 1024px) {
+    .container {
+        padding: 6rem 8rem 0 8rem;
+    }
+};
