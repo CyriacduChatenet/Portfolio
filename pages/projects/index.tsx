@@ -19,7 +19,6 @@ const ProjectsPage = () => {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const listRef = useRef(null);
-  const arrowRef = useRef(null);
 
   const handleFetchProjectsData = async () => {
     const response = await fetch("/api/projects");
@@ -42,17 +41,8 @@ const ProjectsPage = () => {
     gsap.fromTo(listRef.current, {opacity: 0}, {opacity:100, duration: 3, ease: 'power4.in', delay: 1});
   };
 
-  const handleArrowAnimate = () => {
-    gsap.to(arrowRef.current, {display:'block', opacity: 100, duration: 2, ease: 'power4.in'});
-  };
-
-  const handleArrowUnanimate = () => {
-    gsap.fromTo(arrowRef.current, {display: 'block', opacity: 100}, {duration: 2, ease: 'power4.out', display: 'none', opacity: 0});
-  };
-
   useEffect(() => {
     handleAnimate();
-    gsap.from(arrowRef.current, {display: 'none', opacity:0});
     handleFetchProjectsData();
   }, []);
 
@@ -88,20 +78,17 @@ const ProjectsPage = () => {
                     href={`/project/${project.link_title}`}
                     className={styles.projectLink}
                     onMouseEnter={() => {
-                      handleArrowAnimate();
                       handleAnimatePreview();
                       setPreviewImageSrc(project.thumbnail);
                     }}
                     onMouseLeave={() => {
-                      handleArrowUnanimate();
                       handleUnanimatePreview();
                       setTimeout(() => {
                         setPreviewImageSrc("");
                       },2000)
                     }}
                   >
-                    <div className={styles.arrow} ref={arrowRef}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
+                    <div className={styles.arrow}>
                     </div>
                     <span><b>{project.title}</b>&nbsp; - &nbsp;{project.category}</span>
                   </Link>

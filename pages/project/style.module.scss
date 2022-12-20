@@ -1,0 +1,116 @@
+@import '@/styles/variables.scss';
+
+
+.header {
+    background-image: url('../../assets/images/background-mesh-gradient-noise.jpg');
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+
+.container {
+    padding: 6rem 2.5rem 0 2.5rem;
+}
+
+.title {
+    color: $color-forthary;
+    font-family: $font-secondary;
+    font-weight: 400;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+}
+
+.carouselContainer {
+    width: 100%;
+    height: 20rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.image {
+    width: 90%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+.block {
+    width: 100%;
+    height: 15rem;
+    margin: 1rem 0;
+}
+
+.subtitle {
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid $color-primary;
+    width: 100%;
+    text-align: center;
+}
+
+.profile_picture {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100px;
+    background-color: rebeccapurple;
+    margin: 1.5rem 2rem;
+}
+
+.missions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60%;
+    padding: 1rem 0;
+}
+
+.users {
+    display: flex;
+    justify-content:  space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 20% 0 0;
+    list-style: none;
+}
+
+
+@media all and (min-width: 1024px) {
+    .container {
+        padding: 6rem 8rem 0 8rem;
+    }
+
+    .title {
+        font-size: 6rem;
+    }
+
+    .carouselContainer {
+        height: 25rem;
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .content {
+        flex-direction: row;
+        padding: 3rem 0 0 0;
+    }
+    
+    .block {
+        width: 30%;
+        margin: 0 1rem;
+    }
+
+    .subtitle {
+        width: 40%;
+        text-align: left
+    }
+};
