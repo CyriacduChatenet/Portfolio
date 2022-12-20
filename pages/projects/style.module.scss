@@ -1,12 +1,85 @@
 @import '@/styles/variables.scss';
 
 
+.header {
+    background-image: url('../../assets/images/background-mesh-gradient-noise.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
 .container {
     padding: 6rem 2.5rem 0 2.5rem;
+}
+
+.title {
+    font-family: $font-secondary;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-forthary;
+    font-size: 4rem;
+}
+
+.projectsPreview {
+    display: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 3rem 0;
+}
+
+.projectsList {
+    list-style: none;
+}
+
+.projectCard {
+    display: flex;
+    align-items: center;
+    width: 20rem;
+    height: 4rem;
+    border-bottom: 2px solid $color-primary;
+}
+
+.projectLink {
+    color: $color-primary;
+    text-transform: uppercase;
+    line-height: 1.5rem;
 }
 
 @media all and (min-width: 1024px) {
     .container {
         padding: 6rem 8rem 0 8rem;
+    }
+
+    .title {
+        font-size: 6rem;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 40rem;
+    }
+
+    .projectPreview {
+        display: block;
+        border-radius: 20px;
+        width: 50%;
+    }
+
+    .projectCard {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 4rem;
+        border-bottom: 1px solid $color-primary;
     }
 };
