@@ -1,10 +1,9 @@
 import { NextComponentType } from "next";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import useMenu from "@/contexts/useMenu";
 import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
-import useFetch from "@/hooks/useFetch";
 import { Data } from "@/types/data";
 
 import styles from "@/components/menu/style.module.scss";
@@ -12,7 +11,6 @@ import styles from "@/components/menu/style.module.scss";
 
 const Menu: NextComponentType = () => {
    const [projectsStateData, setProjectsStateData] = useState<Data>({});
-   const [projectsStateDataError, setProjectsStateDataError] = useState<Data>({});
 
   const homeMenuEntry = useRef(null);
   const projectsMenuEntry = useRef(null);
@@ -23,14 +21,23 @@ const Menu: NextComponentType = () => {
 
   const { isOpen, setIsOpen } = useMenu();
 
-  useFetch('/api/projects', 'GET', setProjectsStateData, setProjectsStateDataError);
-
   useAnimateMenu(isOpen, menuContainer, [
     homeMenuEntry,
     projectsMenuEntry,
     talksMenuEntry,
     aboutMenuEntry,
   ]);
+
+  const handleFetchData = async () => {
+    const response = await fetch('/api/projects');
+    const json = await response.json();
+    console.log(json);
+    setProjectsStateData(json);
+  };
+
+  useEffect(() => {
+    handleFetchData();
+  }, []);
 
   return (
     <div className={styles.content} ref={menuContainer}>

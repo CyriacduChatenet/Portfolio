@@ -3,6 +3,8 @@ import gsap from "gsap";
 
 import ContactFooter from "@/components/contactFooter";
 import Layout from "@/components/layout";
+import useMenu from "@/contexts/useMenu";
+import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from "@/pages/about/style.module.scss";
 
@@ -52,6 +54,11 @@ const AboutPage = () => {
   const descriptionRef = useRef(null);
   const nameRef = useRef(null);
   const contentRef = useRef(null);
+
+  const { isOpen } = useMenu();
+
+  useBodyScroll(isOpen);
+  useBodyScrollLock(isOpen);
 
   useEffect(() => {
     gsap.fromTo(titleRef.current, {opacity: 0}, {opacity: 1, duration: 6, delay: 1, ease: 'power4.out'});

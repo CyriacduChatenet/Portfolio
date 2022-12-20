@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import Layout from "@/components/layout";
 import useFetch from "@/hooks/useFetch";
+import useMenu from "@/contexts/useMenu";
+import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from '@/pages/projects/style.module.scss';
 
@@ -9,6 +11,11 @@ import styles from '@/pages/projects/style.module.scss';
 const ProjectsPage = () => {
   const [projectsData, setProjectsData] = useState([]);
   const [projectsDataError, setProjectsDataError] = useState([]);
+
+  const { isOpen } = useMenu();
+
+  useBodyScroll(isOpen);
+  useBodyScrollLock(isOpen);
 
   useFetch('/api/projects', 'GET', setProjectsData, setProjectsDataError);
   return (

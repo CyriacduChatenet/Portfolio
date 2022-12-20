@@ -1,10 +1,17 @@
 import BaselineFooter from "@/components/baselineFooter";
 import Layout from "@/components/layout";
+import useMenu from "@/contexts/useMenu";
+import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from "@/styles/404.module.scss";
 
 
 const NotFoundPage = () => {
+  const { isOpen } = useMenu();
+
+  useBodyScroll(isOpen);
+  useBodyScrollLock(isOpen);
+
   return (
     <div className={styles.container}>
       <Layout

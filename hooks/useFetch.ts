@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Dispatch, SetStateAction, useEffect } from "react";
 
 import { Data } from "@/types/data";
@@ -24,7 +25,7 @@ const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetSta
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [fetchData]);
 };
 
 export default useFetch;

@@ -5,11 +5,18 @@ import ReactPlayer from "react-player";
 import Header from "@/components/header";
 import Layout from "@/components/layout";
 import ContactFooter from "@/components/contactFooter";
+import useMenu from "@/contexts/useMenu";
+import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from "@/pages/talk/style.module.scss";
 
 
 const TalkPage = () => {
+  const { isOpen } = useMenu();
+
+  useBodyScroll(isOpen);
+  useBodyScrollLock(isOpen);
+
   return (
     <Layout
       title={"Create Next App"}
