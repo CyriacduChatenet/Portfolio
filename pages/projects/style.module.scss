@@ -12,6 +12,10 @@
     padding: 6rem 2.5rem 0 2.5rem;
 }
 
+.titleContent {
+    margin: 2rem 0 0 0;
+}
+
 .title {
     font-family: $font-secondary;
     font-weight: 400;
@@ -35,6 +39,7 @@
 
 .projectsList {
     list-style: none;
+    height: 100%;
 }
 
 .projectCard {
@@ -51,6 +56,11 @@
     line-height: 1.5rem;
 }
 
+.projectLink {
+    display: flex;
+    align-items: center;
+}
+
 @media all and (min-width: 1024px) {
     .container {
         padding: 6rem 8rem 0 8rem;
@@ -58,6 +68,10 @@
 
     .title {
         font-size: 6rem;
+    }
+
+    .projectsList {
+        width: 30%;
     }
 
     .content {
