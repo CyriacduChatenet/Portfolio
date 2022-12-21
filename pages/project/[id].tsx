@@ -87,6 +87,7 @@ const ProjectPage = () => {
               </ul>
             </div>
           </section>
+          <section className={styles.moodboard}></section>
           <BottomBanner label={'Other projects'} />
         </div>
       </Layout>
