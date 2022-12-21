@@ -78,9 +78,12 @@ const ProjectPage = () => {
             <div className={styles.block} ref={teamRef}>
               <h2 className={styles.subtitle}>Team</h2>
               <ul className={styles.users}>
-                {data.team?.map((user: any) => <li key={user._id} className={styles.user}>
+                {data.team?.map((user: any) => <a key={user._id} href={user.website} className={styles.userLink} target={'_blank'} rel="noreferrer">
+                  <li className={styles.user}>
                     <img src={user.profile_picture} alt="" className={styles.profile_picture} />
-                </li>)}
+                    <span>{user.name}</span>
+                </li>
+                </a>)}
               </ul>
             </div>
           </section>
