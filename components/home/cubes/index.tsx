@@ -20,12 +20,12 @@ const Cubes: FC = () => {
       gsap.fromTo(cubeContainerRef.current, {width: '20%'}, { width: '100%', duration: 5, delay:10});
     }
     
-    gsap.fromTo(cube1Ref.current, {rotation: 0}, { rotation: -360, duration: 8, delay: 2});
-    gsap.fromTo(cube2Ref.current, {rotation: 0}, { rotation: -360, duration: 8, delay: 2});
-    gsap.fromTo(cube3Ref.current, {rotation: 0}, { rotation: -360, duration: 8, delay: 2});
-    gsap.fromTo(cube4Ref.current, {rotation: 0}, { rotation: -360, duration: 8, delay: 2});
-    gsap.fromTo(cube5Ref.current, {rotation: 0}, { rotation: -360, duration: 8, delay: 2});
-    gsap.fromTo(cube6Ref.current, {rotation: 0}, { rotation: -360, duration: 8, delay: 2});
+    gsap.fromTo(cube1Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
+    gsap.fromTo(cube2Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
+    gsap.fromTo(cube3Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
+    gsap.fromTo(cube4Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
+    gsap.fromTo(cube5Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
+    gsap.fromTo(cube6Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
   };
 
   useEffect(() => {
