@@ -119,6 +119,27 @@
     margin: 2rem 0;
 }
 
+.secondTitle {
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: 3rem;
+};
+
+.stackContainer {
+    margin: 4rem 0;
+}
+
+.stack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.stackImg {
+    width: 15%;
+}
 
 @media all and (min-width: 1024px) {
     .container {
@@ -184,5 +205,24 @@
 
     .colorCode {
         font-size: 2rem;
+    }
+
+    .secondTitle {
+        font-family: $font-primary;
+        font-weight: 500;
+        font-size: 4rem;
+    };
+    
+    .stackContainer {
+        margin: 4rem 0;
+    }
+
+    .stack {
+        height: 10rem;
+        width: 80%;
+    }
+
+    .stackImg {
+        width: 7.5%;
     }
 };

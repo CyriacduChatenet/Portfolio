@@ -2,6 +2,10 @@ interface Image {
     source: string;
 };
 
+interface Stack {
+    source: string;
+};
+
 interface User {
     name: string;
     role: string;
@@ -31,6 +35,7 @@ interface IProject {
     images: Image[];
     team: User[];
     missions: Mission[];
+    stack: Stack[];
 }
 
 export default IProject;

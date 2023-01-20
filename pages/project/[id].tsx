@@ -122,6 +122,21 @@ const ProjectPage = () => {
               </ul>
             </div>
           </section>
+          {data.stack ? (
+            <section className={styles.stackContainer}>
+              <h2 className={styles.secondTitle}>Stack</h2>
+              <div className={styles.stack}>
+                {data.stack?.map((stack: any) => (
+                  <img
+                    key={stack._id}
+                    src={stack.source}
+                    alt=""
+                    className={styles.stackImg}
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
           <BottomBanner label={"Other projects"} />
         </div>
       </Layout>
