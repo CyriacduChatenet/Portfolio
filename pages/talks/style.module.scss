@@ -12,10 +12,16 @@
     font-weight: 400;
     margin: 4rem 0 0 0;
     color: $color-forthary;
+    opacity: 0;
+}
+
+.description {
+    opacity: 0;
 }
 
 .talkPreview {
     display: none;
+    opacity: 0;
 }
 
 .content {
@@ -37,6 +43,7 @@
     width: 20rem;
     height: 4rem;
     border-bottom: 2px solid $color-primary;
+    opacity: 0;
 }
 
 .talkLink {

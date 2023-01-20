@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ReactPlayer from "react-player";
 
-import Header from "@/components/header";
 import Layout from "@/components/layout";
 import ContactFooter from "@/components/contactFooter";
 import useMenu from "@/contexts/useMenu";
@@ -12,10 +11,27 @@ import styles from "@/pages/talk/style.module.scss";
 
 
 const TalkPage = () => {
-  const { isOpen } = useMenu();
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const aboutRef = useRef(null);
+  const teamRef = useRef(null);
+  const socialNetworkRef = useRef(null);
 
+  const { isOpen } = useMenu();
   useBodyScroll(isOpen);
   useBodyScrollLock(isOpen);
+
+  const handleAnimate = () => {
+    gsap.fromTo(titleRef.current, { opacity: 0 }, { opacity: 100, ease: 'power4.in', duration: 1 })
+    gsap.fromTo(descriptionRef.current, { opacity: 0 }, { opacity: 100, ease: 'power4.in', duration: 1, delay: 0.5 })
+    gsap.fromTo(aboutRef.current, { opacity: 0 }, { opacity: 100, ease: 'power4.in', duration: 1, delay: 1 })
+    gsap.fromTo(teamRef.current, { opacity: 0 }, { opacity: 100, ease: 'power4.in', duration: 1, delay: 1.5 })
+    gsap.fromTo(socialNetworkRef.current, { opacity: 0 }, { opacity: 100, ease: 'power4.in', duration: 1, delay: 2 })
+  };
+
+  useEffect(() => {
+    handleAnimate();
+  }, []);
 
   return (
     <Layout
@@ -24,8 +40,8 @@ const TalkPage = () => {
     >
       <div className={styles.container}>
         <div className={styles.contentTitle}>
-          <h1 className={styles.title}>Design tokens</h1>
-          <p className={styles.description}>
+          <h1 className={styles.title} ref={titleRef}>Design tokens</h1>
+          <p className={styles.description} ref={descriptionRef}>
             Tech Ctrl - How design token will change our life as designer /
             developer ?
           </p>
@@ -33,14 +49,14 @@ const TalkPage = () => {
         <div className={styles.content}>
           <ReactPlayer url="https://www.youtube.com/watch?v=r_JTTswNdIs" width={'100%'} />
           <div className={styles.categories}>
-            <div className={styles.category}>
+            <div className={styles.category} ref={aboutRef}>
               <h3 className={styles.categoryTitle}>About</h3>
               <p className={styles.contentDescription}>
               I present my first Meetup at Ctrl Up event named Tech CTRL. <br /> <br />
               This meetup is about design tokens. It’s transversal subject between developer and Ux - Ui designer. the goal is to optimise application creation and production.
               </p>
             </div>
-            <div className={styles.category}>
+            <div className={styles.category} ref={teamRef}>
             <h3 className={styles.categoryTitle}>Team</h3>
             <div className={styles.team}>
               <div className={styles.userContainer}>
@@ -51,7 +67,7 @@ const TalkPage = () => {
               </div>
             </div>
             </div>
-            <div className={styles.category}>
+            <div className={styles.category} ref={socialNetworkRef}>
             <h3 className={styles.categoryTitle}>Social Networks</h3>
             <ul className={styles.socialNetworks}>
               <li className={styles.socialNetwork}>
