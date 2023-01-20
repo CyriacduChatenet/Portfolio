@@ -15,7 +15,8 @@ const NotFoundPage = () => {
   return (
     <div className={styles.container}>
       <Layout
-        title={"Page not found"}
+        title={"Cyriac du Chatenet - Page not found"}
+        description={"Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"}
       >
         <main className={styles.main}>
             <div className={styles.content}>
