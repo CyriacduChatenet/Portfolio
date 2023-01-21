@@ -116,6 +116,7 @@ const ProjectsPage = () => {
                       <b>{project.title}</b>&nbsp; - &nbsp;{project.category}
                     </span>
                   </Link>
+                  <div className={styles.line}></div>
                 </li>
               ))}
             </ul>
