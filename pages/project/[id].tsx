@@ -76,18 +76,16 @@ const ProjectPage = () => {
             </h1>
           </div>
           <div className={styles.carouselContainer} ref={carouselRef}>
-            {data.images?.map((image: any) => (
-              <img
-                key={image._id}
-                src={image.source}
-                alt=""
-                className={styles.image}
-              />
-            ))}
+            <img
+              src={data.thumbnail}
+              alt=""
+              className={styles.image}
+            />
           </div>
           <section className={styles.content}>
             <div className={styles.block} ref={aboutRef}>
               <h2 className={styles.subtitle}>About</h2>
+              <p>Year: {data.year}</p>
               <p className={styles.content}>{data.about}</p>
             </div>
             <div className={styles.block} ref={missionRef}>
@@ -121,6 +119,9 @@ const ProjectPage = () => {
                 ))}
               </ul>
             </div>
+          </section>
+          <section className={styles.images}>
+            {data.images?.map((image: any) => <img key={image._id} src={image.source} alt={''} className={styles.img}/>)}
           </section>
           <BottomBanner label={"Other projects"} />
         </div>

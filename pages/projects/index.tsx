@@ -3,7 +3,6 @@ import Link from "next/link";
 import gsap from "gsap";
 
 import Layout from "@/components/layout";
-import useFetch from "@/hooks/useFetch";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 import { Data } from "@/types/data";
@@ -81,7 +80,7 @@ const ProjectsPage = () => {
         <div className={styles.container}>
           <div className={styles.titleContent}>
             <h1 className={styles.title} ref={titleRef}>
-              Projects
+              Projects <span>{projectsStateData.data?.length}</span>
             </h1>
             <p className={styles.description} ref={descriptionRef}>
               Some cool projects i’ve done in school or my work internship

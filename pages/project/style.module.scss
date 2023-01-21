@@ -18,7 +18,7 @@
     font-weight: 400;
     font-size: 3rem;
     text-transform: uppercase;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .secondTitle {
@@ -31,7 +31,7 @@
 
 .carouselContainer {
     width: 100%;
-    height: 20rem;
+    height: 15rem;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -39,8 +39,8 @@
 
 .image {
     width: 100%;
-    height: 50%;
-    margin: 4rem 0;
+    height: 75%;
+    margin: 2rem 0;
     border-radius: 20px;
 }
 
@@ -141,6 +141,11 @@
     width: 15%;
 }
 
+.img {
+    margin: 1rem 0;
+    width: 100%;
+}
+
 @media all and (min-width: 1024px) {
     .container {
         padding: 6rem 8rem 0 8rem;
@@ -148,10 +153,14 @@
 
     .title {
         font-size: 6rem;
+        margin: 0;
     }
 
     .carouselContainer {
-        height: 25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 23rem;
         width: 80%;
         margin: 0 10%;
     }
@@ -172,8 +181,9 @@
     }
 
     .image {
-        width: 80%;
-        height: 120%;
+        width: 75%;
+        height: 110%;
+        margin-top: 1rem;
     }
 
     .subtitleSecond {
@@ -224,5 +234,14 @@
 
     .stackImg {
         width: 7.5%;
+    }
+
+    .images {
+        margin-top: 3rem;
+    }
+
+    .img {
+        margin: 1rem 0;
+        width: 100%;
     }
 };

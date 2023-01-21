@@ -20,7 +20,12 @@
     font-weight: 400;
     text-transform: uppercase;
     color: $color-forthary;
-    font-size: 4rem;
+    font-size: 3.5rem;
+
+    & > span {
+        margin-left: 1rem;
+        font-size: 1.5rem;
+    }
 }
 
 .projectsPreview {
@@ -74,6 +79,10 @@
 
     .title {
         font-size: 6rem;
+        & > span {
+            margin-left: 3rem;
+            font-size: 2.5rem;
+        }
     }
 
     .projectsList {

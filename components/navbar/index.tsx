@@ -28,7 +28,6 @@ const Navbar: FC = () => {
       <Link
         href={"/"}
         className={styles.logoLink}
-        style={isOpen ? { color: "white" } : { color: "black" }}
       >
         {isOpen ? (
           <img src={"logoDark.png"} alt={""} width={"50%"} />
