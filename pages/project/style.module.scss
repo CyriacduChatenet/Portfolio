@@ -4,7 +4,7 @@
 .header {
     background-image: url('../../assets/images/background-mesh-gradient-noise.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     height: auto;
 }
 
@@ -144,6 +144,7 @@
 .img {
     margin: 1rem 0;
     width: 100%;
+    border-radius: 10px;
 }
 
 @media all and (min-width: 1024px) {
@@ -243,5 +244,6 @@
     .img {
         margin: 1rem 0;
         width: 100%;
+        border-radius: 10px;
     }
 };
