@@ -10,6 +10,7 @@ import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 import styles from "@/pages/talk/style.module.scss";
 
 const TalkPage = () => {
+  const ref = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const aboutRef = useRef(null);
@@ -59,7 +60,7 @@ const TalkPage = () => {
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <div className={styles.container}>
+      <div className={styles.container} data-scroll-container ref={ref}>
         <div className={styles.contentTitle}>
           <h1 className={styles.title} ref={titleRef}>
             Design tokens

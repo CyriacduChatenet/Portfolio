@@ -14,6 +14,7 @@ const ProjectsPage = () => {
   const [projectsStateData, setProjectsStateData] = useState<Data>({});
   const [previewImageSrc, setPreviewImageSrc] = useState("");
 
+  const ref = useRef(null);
   const previewImgRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -71,7 +72,7 @@ const ProjectsPage = () => {
   useBodyScrollLock(isOpen);
 
   return (
-    <div className={styles.header}>
+    <div className={styles.header} data-scroll-container ref={ref}>
       <Layout
         title={"Cyriac du Chatenet - Portfolio"}
         description={

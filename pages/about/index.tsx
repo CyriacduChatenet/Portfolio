@@ -49,6 +49,7 @@ const AboutPage = () => {
     },
   ]);
 
+  const ref = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const nameRef = useRef(null);
@@ -98,7 +99,7 @@ const AboutPage = () => {
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <main className={styles.container}>
+      <main className={styles.container} data-scroll-container ref={ref}>
         <div className={styles.titleContent}>
           <h1 className={styles.title} ref={titleRef}>
             About me

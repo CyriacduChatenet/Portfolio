@@ -10,6 +10,7 @@ import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 import styles from "@/pages/talks/style.module.scss";
 
 const TalksPage = () => {
+  const ref = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const previewRef = useRef(null);
@@ -53,7 +54,7 @@ const TalksPage = () => {
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <div className={styles.container}>
+      <div className={styles.container} data-scroll-container ref={ref}>
         <div className={styles.titleContainer}>
           <h1 className={styles.title} ref={titleRef}>
             Talks
