@@ -26,7 +26,6 @@ const ProjectPage = () => {
     const response = await fetch(`/api/${window.location.pathname}`);
     const json = await response.json();
     setData(json.data);
-    console.log(data);
   };
 
   const handleAnimate = () => {

@@ -23,7 +23,6 @@ const ProjectsPage = () => {
   const handleFetchProjectsData = async () => {
     const response = await fetch("/api/projects");
     const json = await response.json();
-    console.log(json);
     setProjectsStateData(json);
   };
 

@@ -32,16 +32,9 @@ const useAnimateMenu = (targetState: boolean, background: MutableRefObject<null>
           { opacity: 100, y: 10, duration: 2.5, ease: "power4.in", delay: 1.5 }
         );
       };
-
-      const handleUnAnimate = () => {
-        console.log('unmounted')
-      };
     
       useEffect(() => {
         handleAnimate();
-        return () => {
-            handleUnAnimate();
-        }
       }, []);
 };
 

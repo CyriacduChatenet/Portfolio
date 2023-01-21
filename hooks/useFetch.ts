@@ -14,11 +14,9 @@ const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetSta
             });
 
             const responseJSON = await response.json();
-            console.log(responseJSON);
             return dataStateMutator(responseJSON);
         }
         catch(err) {
-            console.log(err);
             return errorStateMutator(err)
         }
     };
