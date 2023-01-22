@@ -4,6 +4,7 @@ import IProject from "@/types/project";
 
 const ProjectSchema = new Schema<IProject>({
   title: String,
+  year: Number,
   link_title: String,
   thumbnail: String,
   category: String,
@@ -32,11 +33,6 @@ const ProjectSchema = new Schema<IProject>({
     {
       name: String,
       description: String,
-    },
-  ],
-  stack: [
-    {
-      source: String,
     },
   ],
 });

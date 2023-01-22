@@ -17,8 +17,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <LoaderProvider>
       <MenuProvider>
-        <LocomotiveScrollProvider options={options} containerRef={ref}>
-          <Component {...pageProps} />
+        <LocomotiveScrollProvider
+          options={options}
+          watch={[]}
+          containerRef={ref}
+        >
+          <div data-scroll-container ref={ref}>
+            <Component {...pageProps} />
+          </div>
         </LocomotiveScrollProvider>
       </MenuProvider>
     </LoaderProvider>

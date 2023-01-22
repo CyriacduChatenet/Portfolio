@@ -12,7 +12,6 @@ const ProjectPage = () => {
   const [data, setData] = useState<any>({});
   const { isOpen } = useMenu();
 
-  const ref = useRef(null);
   const titleRef = useRef(null);
   const carouselRef = useRef(null);
   const aboutRef = useRef(null);
@@ -69,7 +68,7 @@ const ProjectPage = () => {
           "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
         }
       >
-        <div className={styles.container} data-scroll-container ref={ref}>
+        <div className={styles.container}>
           <div className={styles.contentTitle} data-sccroll-section>
             <h1 className={styles.title} ref={titleRef}>
               {data.title}

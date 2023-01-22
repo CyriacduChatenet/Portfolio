@@ -2,10 +2,6 @@ interface Image {
     source: string;
 };
 
-interface Stack {
-    source: string;
-};
-
 interface User {
     name: string;
     role: string;
@@ -28,6 +24,7 @@ interface Mission {
 interface IProject {
     _id?: string;
     title: string;
+    year: number;
     link_title: string;
     thumbnail: string;
     category: string;
@@ -35,7 +32,6 @@ interface IProject {
     images: Image[];
     team: User[];
     missions: Mission[];
-    stack: Stack[];
 }
 
 export default IProject;
