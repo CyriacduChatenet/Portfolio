@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import { useRef } from "react";
 
 import LoaderProvider from "@/contexts/useLoader";
 import { MenuProvider } from "@/contexts/useMenu";

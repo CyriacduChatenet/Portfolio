@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { gsap } from "gsap";
 
 import Layout from "@/components/layout";
 import useMenu from "@/contexts/useMenu";
@@ -8,8 +7,6 @@ import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 import BottomBanner from "@/components/bottomBanner";
 
 import styles from "@/pages/project/style.module.scss";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ProjectPage = () => {
   const [data, setData] = useState<any>({});
@@ -58,48 +55,9 @@ const ProjectPage = () => {
     );
   };
 
-  const handleScrollAnimate = () => {
-    gsap.to('#img-0', { opacity: 100, ease: 'power4.in', duration: 1, scrollTrigger: {
-      trigger: '#img-0',
-      scrub: true,
-      markers: false,
-    } });
-
-    gsap.to('#img-1', { opacity: 100, ease: 'power4.in', duration: 1, scrollTrigger: {
-      trigger: '#img-1',
-      scrub: true,
-      markers: false,
-    } });
-
-    gsap.to('#img-2', { opacity: 100, ease: 'power4.in', duration: 1, scrollTrigger: {
-      trigger: '#img-2',
-      scrub: 0.5,
-      markers: false,
-    } });
-
-    gsap.to('#img-3', { opacity: 100, ease: 'power4.in', duration: 1, scrollTrigger: {
-      trigger: '#img-3',
-      scrub: 0.5,
-      markers: false,
-    } });
-
-    gsap.to('#img-4', { opacity: 100, ease: 'power4.in', duration: 1, scrollTrigger: {
-      trigger: '#img-4',
-      scrub: 0.5,
-      markers: false,
-    } });
-
-    gsap.to('#img-5', { opacity: 100, ease: 'power4.in', duration: 1, scrollTrigger: {
-      trigger: '#img-5',
-      scrub: 0.5,
-      markers: false,
-    } });
-  };
-
   useEffect(() => {
     handleFetchData();
     handleAnimate();
-    handleScrollAnimate();
   }, []);
 
   return (
@@ -162,7 +120,7 @@ const ProjectPage = () => {
             </div>
           </section>
           <section className={styles.images}>
-            {data.images?.map((image: any, index: number) => <img key={image._id} src={image.source} alt={''} className={styles.img} id={`img-${index}`}/>)}
+            {data.images?.map((image: any, index: number) => <img key={image._id} src={image.source} alt={''} className={styles.img}/>)}
           </section>
           <BottomBanner label={"Other projects"} />
         </div>
