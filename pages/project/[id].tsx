@@ -69,7 +69,7 @@ const ProjectPage = () => {
         }
       >
         <div className={styles.container}>
-          <div className={styles.contentTitle} data-sccroll-section>
+          <div className={styles.contentTitle}>
             <h1 className={styles.title} ref={titleRef}>
               {data.title}
             </h1>
@@ -81,7 +81,7 @@ const ProjectPage = () => {
               className={styles.image}
             />
           </div>
-          <section className={styles.content} data-sccroll-section>
+          <section className={styles.content} data-scroll-section>
             <div className={styles.block} ref={aboutRef}>
               <h2 className={styles.subtitle}>About</h2>
               <p>Year: {data.year}</p>
@@ -119,7 +119,7 @@ const ProjectPage = () => {
               </ul>
             </div>
           </section>
-          <section className={styles.images} data-sccroll-section>
+          <section className={styles.images} data-scroll-section>
             {data.images?.map((image: any) => <img key={image._id} src={image.source} alt={''} className={styles.img}/>)}
           </section>
           <BottomBanner label={"Other projects"} />
