@@ -18,6 +18,7 @@ const ProjectsPage = () => {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const listRef = useRef(null);
+  const lineRef = useRef(null);
 
   const handleFetchProjectsData = async () => {
     const response = await fetch("/api/projects");
@@ -57,6 +58,14 @@ const ProjectsPage = () => {
       { opacity: 0 },
       { opacity: 100, duration: 3, ease: "power4.in", delay: 1 }
     );
+  };
+
+  const handleLineAnimate = () => {
+    gsap.fromTo(lineRef.current, {width: 0}, {width: '80%', duration: 1, ease: 'power4.in'});
+  };
+
+  const handleLineUnanimate = () => {
+    gsap.fromTo(lineRef.current, {width: '80%'}, {width: 0, duration: 1, ease: 'power4.in'});
   };
 
   useEffect(() => {
@@ -102,12 +111,14 @@ const ProjectsPage = () => {
                     onMouseEnter={() => {
                       handleAnimatePreview();
                       setPreviewImageSrc(project.thumbnail);
+                      handleLineAnimate();
                     }}
                     onMouseLeave={() => {
                       handleUnanimatePreview();
                       setTimeout(() => {
                         setPreviewImageSrc("");
                       }, 2000);
+                      handleLineUnanimate();
                     }}
                   >
                     <div className={styles.arrow}></div>
@@ -115,7 +126,7 @@ const ProjectsPage = () => {
                       <b>{project.title}</b>&nbsp; - &nbsp;{project.category}
                     </span>
                   </Link>
-                  <div className={styles.line}></div>
+                  <div className={styles.line} ref={lineRef}></div>
                 </li>
               ))}
             </ul>

@@ -68,18 +68,14 @@ const ProjectPage = () => {
           "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
         }
       >
-        <div className={styles.container} >
+        <div className={styles.container}>
           <div className={styles.contentTitle}>
             <h1 className={styles.title} ref={titleRef}>
               {data.title}
             </h1>
           </div>
           <div className={styles.carouselContainer} ref={carouselRef}>
-            <img
-              src={data.thumbnail}
-              alt=""
-              className={styles.image}
-            />
+            <img src={data.thumbnail} alt="" className={styles.image} />
           </div>
           <section className={styles.content}>
             <div className={styles.block} ref={aboutRef}>
@@ -91,7 +87,7 @@ const ProjectPage = () => {
               <h2 className={styles.subtitle}>Mission</h2>
               <ul className={styles.missions}>
                 {data.missions?.map((mission: any) => (
-                  <li key={mission._id}>{mission.name}</li>
+                  <li key={mission._id}>{mission.name} : {mission.description}</li>
                 ))}
               </ul>
             </div>
@@ -120,7 +116,14 @@ const ProjectPage = () => {
             </div>
           </section>
           <section className={styles.images}>
-            {data.images?.map((image: any, index: number) => <img key={image._id} src={image.source} alt={''} className={styles.img}/>)}
+            {data.images?.map((image: any, index: number) => (
+              <img
+                key={image._id}
+                src={image.source}
+                alt={""}
+                className={styles.img}
+              />
+            ))}
           </section>
           <BottomBanner label={"Other projects"} />
         </div>

@@ -114,7 +114,8 @@
     }
 
     .line {
-        width: 80%;
+        width: 0;
+        max-width: 80%;
         height: 2px;
         background-color: #000000
     }
