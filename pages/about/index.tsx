@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import ContactFooter from "@/components/contactFooter";
 import Layout from "@/components/layout";
@@ -7,6 +8,8 @@ import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
 import styles from "@/pages/about/style.module.scss";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutPage = () => {
   const [skills, setSkills] = useState([
@@ -63,7 +66,7 @@ const AboutPage = () => {
   useBodyScroll(isOpen);
   useBodyScrollLock(isOpen);
 
-  useEffect(() => {
+  const handleTextAnimate = () => {
     gsap.fromTo(
       titleRef.current,
       { opacity: 0 },
@@ -84,12 +87,85 @@ const AboutPage = () => {
       { opacity: 0 },
       { opacity: 1, duration: 6, delay: 2.5, ease: "power4.out" }
     );
+  };
 
-    gsap.fromTo(
-      skillsTitleRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 6, delay: 2.5, ease: "power4.out" }
-    );
+  const handleScrollAnimate = () => {
+    gsap.to(skillsTitleRef.current, { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: skillsTitleRef.current,
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-0', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-0',
+      scrub: 0.5,
+      markers: false
+    } });
+    
+    gsap.to('#lang-1', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-1',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-2', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-2',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-3', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-3',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-4', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-4',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-5', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-5',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-6', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-6',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-7', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-7',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-8', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-8',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-9', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-9',
+      scrub: 0.5,
+      markers: false
+    } });
+
+    gsap.to('#lang-10', { opacity: 100, ease: 'power4.in', duration:2, scrollTrigger: {
+      trigger: '#lang-10',
+      scrub: 0.5,
+      markers: false
+    } });
+  };
+
+  useEffect(() => {
+    handleTextAnimate();
+    handleScrollAnimate();
   }, []);
 
   return (
@@ -148,8 +224,8 @@ const AboutPage = () => {
             Skills
           </h2>
           <ul className={styles.skillsList}>
-            {skills.map((skill) => (
-              <li className={styles.skill} key={skill.name}>
+            {skills.map((skill, index) => (
+              <li className={styles.skill} key={skill.name} id={`lang-${index}`}>
                 <a
                   href={skill.url}
                   target={"_blank"}
