@@ -11,7 +11,7 @@ import gsap from "gsap";
 
 const Menu: NextComponentType = () => {
    const [projectsStateData, setProjectsStateData] = useState<any>({});
-   
+
 
   const homeMenuEntry = useRef(null);
   const projectsMenuEntry = useRef(null);
@@ -48,6 +48,8 @@ const Menu: NextComponentType = () => {
     gsap.fromTo(target.current, {width: '60%'}, {width: 0, duration: 1, ease: 'power4.in'});
   };
 
+  const length = projectsStateData.data?.length;
+
   useEffect(() => {
     handleFetchData();
   }, []);
@@ -77,7 +79,7 @@ const Menu: NextComponentType = () => {
             onMouseEnter={() => handleLineAnimate(projectsMenuLine)}
             onMouseLeave={() => handleLineUnanimate(projectsMenuLine)}
           >
-            Projects ({projectsStateData.data.length})
+            Projects ({length})
           </Link>
           <div className={styles.line} ref={projectsMenuLine}></div>
         </li>
