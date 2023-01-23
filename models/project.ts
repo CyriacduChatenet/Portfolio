@@ -6,6 +6,7 @@ const ProjectSchema = new Schema<IProject>({
   title: String,
   year: Number,
   link_title: String,
+  website_url: String,
   thumbnail: String,
   category: String,
   about: String,

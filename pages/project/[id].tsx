@@ -82,12 +82,34 @@ const ProjectPage = () => {
               <h2 className={styles.subtitle}>About</h2>
               <p>Year: {data.year}</p>
               <p className={styles.content}>{data.about}</p>
+              <br />
+              <a
+                href={data.website_url}
+                className={styles.website_link}
+                target={"_blank"}
+                rel="noreferrer"
+              >
+                <span>view website</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4Z"
+                  />
+                </svg>
+              </a>
             </div>
             <div className={styles.block} ref={missionRef}>
               <h2 className={styles.subtitle}>Mission</h2>
               <ul className={styles.missions}>
                 {data.missions?.map((mission: any) => (
-                  <li key={mission._id}>{mission.name} : {mission.description}</li>
+                  <li key={mission._id}>
+                    {mission.name} : {mission.description}
+                  </li>
                 ))}
               </ul>
             </div>

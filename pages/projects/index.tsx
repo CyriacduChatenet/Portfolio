@@ -61,11 +61,19 @@ const ProjectsPage = () => {
   };
 
   const handleLineAnimate = () => {
-    gsap.fromTo(lineRef.current, {width: 0}, {width: '80%', duration: 1, ease: 'power4.in'});
+    gsap.fromTo(
+      lineRef.current,
+      { width: 0 },
+      { width: "80%", duration: 1, ease: "power4.in" }
+    );
   };
 
   const handleLineUnanimate = () => {
-    gsap.fromTo(lineRef.current, {width: '80%'}, {width: 0, duration: 1, ease: 'power4.in'});
+    gsap.fromTo(
+      lineRef.current,
+      { width: "80%" },
+      { width: 0, duration: 1, ease: "power4.in" }
+    );
   };
 
   useEffect(() => {

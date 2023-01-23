@@ -25,6 +25,7 @@ interface IProject {
     _id?: string;
     title: string;
     year: number;
+    website_url: string;
     link_title: string;
     thumbnail: string;
     category: string;
