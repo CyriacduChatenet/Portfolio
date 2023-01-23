@@ -18,7 +18,6 @@ const ProjectsPage = () => {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const listRef = useRef(null);
-  const lineRef = useRef(null);
 
   const handleFetchProjectsData = async () => {
     const response = await fetch("/api/projects");
@@ -60,22 +59,6 @@ const ProjectsPage = () => {
     );
   };
 
-  const handleLineAnimate = () => {
-    gsap.fromTo(
-      lineRef.current,
-      { width: 0 },
-      { width: "80%", duration: 1, ease: "power4.in" }
-    );
-  };
-
-  const handleLineUnanimate = () => {
-    gsap.fromTo(
-      lineRef.current,
-      { width: "80%" },
-      { width: 0, duration: 1, ease: "power4.in" }
-    );
-  };
-
   useEffect(() => {
     handleAnimate();
     handleFetchProjectsData();
@@ -111,7 +94,7 @@ const ProjectsPage = () => {
               ref={previewImgRef}
             />
             <ul className={styles.projectsList} ref={listRef}>
-              {projectsStateData.data?.map((project: any) => (
+              {projectsStateData.data?.map((project: any, index: number) => (
                 <li key={project._id} className={styles.projectCard}>
                   <Link
                     href={`/project/${project.link_title}`}
@@ -119,22 +102,19 @@ const ProjectsPage = () => {
                     onMouseEnter={() => {
                       handleAnimatePreview();
                       setPreviewImageSrc(project.thumbnail);
-                      handleLineAnimate();
                     }}
                     onMouseLeave={() => {
                       handleUnanimatePreview();
                       setTimeout(() => {
                         setPreviewImageSrc("");
                       }, 2000);
-                      handleLineUnanimate();
                     }}
                   >
-                    <div className={styles.arrow}></div>
                     <span>
                       <b>{project.title}</b>&nbsp; - &nbsp;{project.category}
                     </span>
+                    <div className={styles.line}></div>
                   </Link>
-                  <div className={styles.line} ref={lineRef}></div>
                 </li>
               ))}
             </ul>

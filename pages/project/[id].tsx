@@ -10,6 +10,7 @@ import styles from "@/pages/project/style.module.scss";
 
 const ProjectPage = () => {
   const [data, setData] = useState<any>({});
+
   const { isOpen } = useMenu();
 
   const titleRef = useRef(null);
