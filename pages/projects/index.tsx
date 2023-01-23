@@ -5,12 +5,11 @@ import gsap from "gsap";
 import Layout from "@/components/layout";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
-import { Data } from "@/types/data";
 
 import styles from "@/pages/projects/style.module.scss";
 
 const ProjectsPage = () => {
-  const [projectsStateData, setProjectsStateData] = useState<Data>({});
+  const [projectsStateData, setProjectsStateData] = useState([]);
   const [previewImageSrc, setPreviewImageSrc] = useState("");
 
   const ref = useRef(null);
@@ -22,7 +21,8 @@ const ProjectsPage = () => {
   const handleFetchProjectsData = async () => {
     const response = await fetch("/api/projects");
     const json = await response.json();
-    setProjectsStateData(json);
+    const sortedJson = json.data.sort((p1: any, p2: any) => (p1.year < p2.year) ? 1 : (p1.year > p2.year) ? -1 : 0)
+    setProjectsStateData(sortedJson);
   };
 
   const handleAnimatePreview = () => {
@@ -80,7 +80,7 @@ const ProjectsPage = () => {
         <div className={styles.container}>
           <div className={styles.titleContent}>
             <h1 className={styles.title} ref={titleRef}>
-              Projects <span>{projectsStateData.data?.length}</span>
+              Projects <span>{projectsStateData.length}</span>
             </h1>
             <p className={styles.description} ref={descriptionRef}>
               Some cool projects i’ve done in school or my work internship
@@ -94,7 +94,7 @@ const ProjectsPage = () => {
               ref={previewImgRef}
             />
             <ul className={styles.projectsList} ref={listRef}>
-              {projectsStateData.data?.map((project: any, index: number) => (
+              {projectsStateData.map((project: any, index: number) => (
                 <li key={project._id} className={styles.projectCard}>
                   <Link
                     href={`/project/${project.link_title}`}
