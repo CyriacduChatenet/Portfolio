@@ -4,14 +4,13 @@ import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import useMenu from "@/contexts/useMenu";
 import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
-import { Data } from "@/types/data";
 
 import styles from "@/components/menu/style.module.scss";
 import gsap from "gsap";
 
 
 const Menu: NextComponentType = () => {
-   const [projectsStateData, setProjectsStateData] = useState<Data>({});
+   const [projectsStateData, setProjectsStateData] = useState([]);
 
   const homeMenuEntry = useRef(null);
   const projectsMenuEntry = useRef(null);
