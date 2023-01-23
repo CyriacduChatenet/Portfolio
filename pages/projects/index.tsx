@@ -26,6 +26,7 @@ const ProjectsPage = () => {
     );
     setProjectsStateData(sortedJson);
   };
+  
 
   const handleAnimatePreview = () => {
     gsap.fromTo(
