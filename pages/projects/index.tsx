@@ -21,7 +21,9 @@ const ProjectsPage = () => {
   const handleFetchProjectsData = async () => {
     const response = await fetch("/api/projects");
     const json = await response.json();
-    const sortedJson = json.data.sort((p1: any, p2: any) => (p1.year < p2.year) ? 1 : (p1.year > p2.year) ? -1 : 0)
+    const sortedJson = json.data.sort((p1: any, p2: any) =>
+      p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0
+    );
     setProjectsStateData(sortedJson);
   };
 
@@ -95,20 +97,21 @@ const ProjectsPage = () => {
             />
             <ul className={styles.projectsList} ref={listRef}>
               {projectsStateData.map((project: any, index: number) => (
-                <li key={project._id} className={styles.projectCard}>
+                <li
+                  key={project._id}
+                  className={styles.projectCard}
+                  onMouseEnter={() => {
+                    handleAnimatePreview();
+                    setPreviewImageSrc(project.thumbnail);
+                  }}
+                  onMouseLeave={() => {
+                    handleUnanimatePreview();
+                    setPreviewImageSrc("");
+                  }}
+                >
                   <Link
                     href={`/project/${project.link_title}`}
                     className={styles.projectLink}
-                    onMouseEnter={() => {
-                      handleAnimatePreview();
-                      setPreviewImageSrc(project.thumbnail);
-                    }}
-                    onMouseLeave={() => {
-                      handleUnanimatePreview();
-                      setTimeout(() => {
-                        setPreviewImageSrc("");
-                      }, 2000);
-                    }}
                   >
                     <span>
                       <b>{project.title}</b>&nbsp; - &nbsp;{project.category}
