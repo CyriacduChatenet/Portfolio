@@ -172,8 +172,17 @@
     }
 
     .content {
+        margin-top: 2rem;
         flex-direction: row;
-        padding: 3rem 0 0 0;
+    }
+
+    .aboutBlock {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 14rem;
+        width: 100%;
+        padding-top: 2rem;
     }
     
     .block {
@@ -243,12 +252,16 @@
     }
 
     .images {
-        margin-top: 3rem;
+        margin-top: 8rem;
     }
 
     .img {
         margin: 1rem 0;
         width: 100%;
         border-radius: 10px;
+    }
+
+    .missions {
+        height: 90%;
     }
 };
