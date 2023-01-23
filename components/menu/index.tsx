@@ -11,6 +11,7 @@ import gsap from "gsap";
 
 const Menu: NextComponentType = () => {
    const [projectsStateData, setProjectsStateData] = useState<any>({});
+   
 
   const homeMenuEntry = useRef(null);
   const projectsMenuEntry = useRef(null);
