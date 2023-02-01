@@ -75,6 +75,27 @@
   height: 100%;
 }
 
+@media all and (min-width: 768px) {
+  .title {
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: 6rem;
+  }
+  
+  .devTitle {
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    font-size: 6rem;
+  }
+
+  .description {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.25rem;
+  }
+}
+
 @media all and (min-width: 1024px) {
   .main {
     display: flex;

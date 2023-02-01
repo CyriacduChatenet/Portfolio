@@ -16,8 +16,12 @@ const Cubes: FC = () => {
     gsap.fromTo(cubeContainerRef.current, {rotation: 0}, { rotation: 360, duration: 4, delay: 4});
     gsap.fromTo(cubeContainerRef.current, {opacity: 0}, { opacity: 100, ease: 'power4.in', duration: 4, delay: 2});
 
-    if(window.innerWidth <= 1023) {
+    if(window.innerWidth <= 767) {
       gsap.fromTo(cubeContainerRef.current, {width: '20%'}, { width: '100%', duration: 5, delay:2});
+    }
+
+    if(window.innerWidth >= 768 && window.innerWidth <= 1023) {
+      gsap.fromTo(cubeContainerRef.current, {width: '100%'}, { width: '100%', marginTop: '20%', duration: 5, delay:2});
     }
     
     gsap.fromTo(cube1Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
