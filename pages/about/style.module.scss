@@ -43,6 +43,7 @@
     font-weight: 400;
     margin-bottom: 2rem;
     opacity: 0;
+    color: $color-forthary;
 }
 
 .skillLink {
@@ -66,6 +67,26 @@
 
 .profilePicture {
     border-radius: 20px;
+}
+
+@media all and (min-width: 768px) {
+        .skillsList {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 14rem;
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .skills {
+        height: 25rem;
+        margin: 6rem 0;
+    }
+
+    .skill {
+        margin: 1rem 0;
+    }
 }
 
 @media all and (min-width: 1024px) {
