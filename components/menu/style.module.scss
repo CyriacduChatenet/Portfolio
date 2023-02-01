@@ -31,6 +31,18 @@
     margin-top: 1rem;
 }
 
+@media all and (min-width: 768px) {
+    .content {
+        height: 100vh;
+        padding: 3rem $padding-desktop 0 $padding-desktop;
+      }
+
+      .navList {
+        height: 75%;
+        padding-left: 10rem;
+      }
+}
+
 
 @media all and (min-width: 1024px) {
     .content {
