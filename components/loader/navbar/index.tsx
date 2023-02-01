@@ -11,7 +11,7 @@ const LoaderNavbar: FC = () => {
         let month = date.getMonth() + 1;
         const day = date.getDate();
     
-        if(month < 12) {
+        if(month > 12) {
           month = 1
         };
         setDateNow(`${day}/${month}/${year}`)

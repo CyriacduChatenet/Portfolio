@@ -52,6 +52,46 @@
     line-height: 1.5rem;
 }
 
+@media all and (min-width: 768px) {
+    .talkPreview {
+        display: none;
+        opacity: 0;
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 3rem 0;
+    }
+    
+    .talksList {
+        list-style: none;
+    }
+    
+    .talkCard {
+        display: flex;
+        align-items: center;
+        width: 40rem;
+        height: 4rem;
+        border-bottom: 2px solid $color-primary;
+        opacity: 0;
+    }
+    
+    .talkLink {
+        color: $color-primary;
+        text-transform: uppercase;
+        line-height: 1.5rem;
+    }
+
+    .container {
+        padding: 4rem 2rem;
+        margin-top: 2rem;
+    }
+}
+
 @media all and (min-width: 1024px) {
     .container {
         padding: 8rem 8rem 0 8rem;
