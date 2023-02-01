@@ -64,6 +64,9 @@
 
     .title {
         font-size: 8rem;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .footer {

@@ -3,8 +3,9 @@
 
 .header {
     background-image: url('../../assets/images/background-mesh-gradient-noise.jpg');
-    background-size: cover;
     background-position: bottom;
+    background-size: contain;
+    background-repeat: repeat;
     height: auto;
 }
 
@@ -72,7 +73,6 @@
     height: 3rem;
     width: 3rem;
     border-radius: 100px;
-    background-color: rebeccapurple;
     margin: 1.5rem 2rem;
 }
 

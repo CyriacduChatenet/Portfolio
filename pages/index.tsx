@@ -26,12 +26,12 @@ const HomePage = () => {
     gsap.fromTo(
       creativeTitle.current,
       { opacity: 0, x: -20 },
-      { delay: 8, duration: 6, ease: "power4.inOut", opacity: 100, x: 0 }
+      { delay: 4, duration: 6, ease: "power4.inOut", opacity: 100, x: 0 }
     );
     gsap.fromTo(
       developerTitle.current,
       { opacity: 0, x: -20 },
-      { delay: 8, duration: 6, ease: "power4.inOut", opacity: 100, x: 0 }
+      { delay: 4, duration: 6, ease: "power4.inOut", opacity: 100, x: 0 }
     );
   };
 

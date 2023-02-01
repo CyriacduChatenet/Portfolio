@@ -13,11 +13,11 @@ const Cubes: FC = () => {
   const cube6Ref = useRef(null);
 
   const handleAnimate = () => {
-    gsap.fromTo(cubeContainerRef.current, {rotation: 0}, { rotation: 360, duration: 8, delay: 4});
-    gsap.fromTo(cubeContainerRef.current, {opacity: 0}, { opacity: 100, ease: 'power4.in', duration: 12, delay: 2});
+    gsap.fromTo(cubeContainerRef.current, {rotation: 0}, { rotation: 360, duration: 4, delay: 4});
+    gsap.fromTo(cubeContainerRef.current, {opacity: 0}, { opacity: 100, ease: 'power4.in', duration: 4, delay: 2});
 
     if(window.innerWidth <= 1023) {
-      gsap.fromTo(cubeContainerRef.current, {width: '20%'}, { width: '100%', duration: 5, delay:10});
+      gsap.fromTo(cubeContainerRef.current, {width: '20%'}, { width: '100%', duration: 5, delay:2});
     }
     
     gsap.fromTo(cube1Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});

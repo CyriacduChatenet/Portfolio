@@ -41,11 +41,11 @@ const Menu: NextComponentType = () => {
   };
 
   const handleLineAnimate = (target : MutableRefObject<null>) => {
-    gsap.fromTo(target.current, {width: 0}, {width: '60%', duration: 1, ease: 'power4.in'});
+    gsap.fromTo(target.current, {width: 0}, {width: '60%', duration: 0.5, ease: 'power4.in'});
   };
 
   const handleLineUnanimate = (target: MutableRefObject<null>) => {
-    gsap.fromTo(target.current, {width: '60%'}, {width: 0, duration: 1, ease: 'power4.in'});
+    gsap.fromTo(target.current, {width: '60%'}, {width: 0, duration: 0.5, ease: 'power4.in'});
   };
 
   const length = projectsStateData.data?.length;
