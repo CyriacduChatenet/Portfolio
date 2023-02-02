@@ -156,6 +156,33 @@
     margin-top: 12rem;
 }
 
+@media all and (min-width: 768px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .image {
+        width: 70%;
+        margin: 2rem 15% 0 15%;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .subtitle {
+        width: 70%;
+        font-size: 1.5rem;
+    }
+
+    .aboutBlock {
+        width: 70%;
+    }
+}
+
 @media all and (min-width: 1024px) {
     .container {
         padding: 6rem 8rem 0 8rem;

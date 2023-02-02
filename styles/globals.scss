@@ -11,6 +11,20 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  font-size: 1rem;
+}
+
+@media all and (min-width: 768px) {
+  * {
+    font-size: 1.1rem;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  * {
+    font-size: 1rem;
+  }
 }
 
 #lang-0 {

@@ -21,8 +21,8 @@ const ContactFooter: FC = () => {
             (parent.location = "mailto:cyriacduchatenet@icloud.com")
           }
         >
-          <p id="drop"> DROP ME</p>
-          <span id="email">AN EMAIL</span>
+          <p id="drop" className={styles.drop}> DROP ME</p>
+          <span id="email" className={styles.email}>AN EMAIL</span>
         </h3>
       </div>
       <footer className={styles.footer}>

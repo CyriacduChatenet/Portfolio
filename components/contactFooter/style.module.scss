@@ -55,6 +55,15 @@
     line-height: 1.5rem;
 }
 
+@media all and (min-width: 768px) {
+    .drop {
+        font-size: 5rem;
+    }
+    .email {
+        font-size: 5rem;
+    }
+}
+
 @media all and (min-width: 1024px) {
     .container {
         display: flex;
