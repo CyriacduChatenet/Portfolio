@@ -76,6 +76,11 @@
 }
 
 @media all and (min-width: 768px) {
+  .main {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
   .title {
     text-transform: uppercase;
     font-family: $font-primary;
@@ -93,6 +98,10 @@
     text-align: center;
     padding: 1rem 0;
     font-size: 1.25rem;
+  }
+
+  .titleContainer {
+    margin-top: 14rem;
   }
 }
 
@@ -142,5 +151,21 @@
 
   .position {
     padding-top: 8rem;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: 10rem;
+  }
+  
+  .devTitle {
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    font-size: 10rem;
+  }
+  .titleContainer {
+    margin: 0;
   }
 }

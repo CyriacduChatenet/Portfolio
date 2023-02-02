@@ -90,7 +90,7 @@
         flex-direction: row-reverse;
         justify-content: space-around;
         height: 8rem;
-        margin: 2.5rem 0 0 0;
+        margin: 5rem 0 0 0;
     }
     
     .cubeContainer:nth-child(3) {
@@ -98,6 +98,11 @@
         justify-content: center;
         height: 12rem;
         margin: 0.5rem 0 0 0;
+    }
+
+    .cube {
+        width: 8rem;
+        height: 8rem;
     }
     
     #cube1 {
