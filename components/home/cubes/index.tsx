@@ -14,13 +14,7 @@ const Cubes: FC = () => {
     gsap.fromTo(cubeContainerRef.current, {rotation: 0}, { rotation: 360, duration: 4, delay: 4});
     gsap.fromTo(cubeContainerRef.current, {opacity: 0}, { opacity: 100, ease: 'power4.in', duration: 4, delay: 2});
 
-    if(window.innerWidth <= 767) {
-      gsap.fromTo(cubeContainerRef.current, {width: '20%'}, { width: '100%', duration: 5, delay:2});
-    }
-
-    if(window.innerWidth >= 768 && window.innerWidth <= 1023) {
-      gsap.fromTo(cubeContainerRef.current, {width: '100%'}, { width: '100%', marginTop: '20%', duration: 5, delay:2});
-    }
+    gsap.fromTo(cubeContainerRef.current, {width: '100%'}, { width: '100%', duration: 5, delay:2});
     
     gsap.fromTo(cube1Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
     gsap.fromTo(cube2Ref.current, {rotation: 0}, { rotation: -360, duration: 1, delay: 2});
@@ -34,18 +28,18 @@ const Cubes: FC = () => {
     handleAnimate();
   }, [])
   return (
-    <div className={''} ref={cubeContainerRef} >
-      <div className={''}>
-        <div className={''} ref={cube1Ref}></div>
-        <div className={''} ref={cube2Ref}></div>
-        <div className={''} ref={cube3Ref}></div>
+    <div className={'absolute z-1 w-full md:w-12 h-1/4 md:h-1/4 lg:h-1/3 flex flex-col justify-around right-0 top-64 md:top-68 lg:top-48 xl:top-68'} ref={cubeContainerRef} >
+      <div className={'flex items-center justify-around w-full'}>
+        <div className={'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue'} id={'cube1'} ref={cube1Ref}></div>
+        <div className={'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-12 bg-blue'} id={'cube2'} ref={cube2Ref}></div>
+        <div className={'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-10 bg-blue'} id={'cube3'} ref={cube3Ref}></div>
       </div>
-      <div className={''}>
-        <div className={''} ref={cube4Ref}></div>
-        <div className={''} ref={cube6Ref}></div>
+      <div className={'flex items-center justify-around w-full'}>
+        <div className={'w-12 h-12 sm:w-14 sm:h-144 md:w-16 md:h-16 mb-4 bg-blue'} id={'cube4'} ref={cube4Ref}></div>
+        <div className={'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue'} id={'cube5'} ref={cube6Ref}></div>
       </div>
-      <div className={''}>
-        <div className={''} id={''} ref={cube5Ref}></div>
+      <div className={'flex items-center justify-around w-full'}>
+        <div className={'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-4 bg-blue'} id={'cube6'} ref={cube5Ref}></div>
       </div>
     </div>
   );

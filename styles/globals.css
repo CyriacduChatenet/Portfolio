@@ -122,3 +122,45 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+#cube2 {
+  background-image: url('../assets//images/cubes/cube1.png');
+  background-size: 200%;
+  background-position-x: center;
+  background-position-y: 30%;
+}
+
+#cube3 {
+  background-image: url('../assets//images/cubes/cube2.png');
+  background-size: 200%;
+  background-position-x: center;
+  background-position-y: 50%;
+}
+
+#cube5 {
+  background-image: url('../assets//images/cubes/cube3.png');
+  background-size: 160%;
+  background-position-x: center;
+  background-position-y: 50%;
+}
+
+#cube6 {
+  background-image: url('../assets//images/cubes/cube4.png');
+  background-size: 160%;
+  background-position-x: center;
+  background-position-y: 70%;
+}
+
+#cube4 {
+  background-image: url('../assets//images/cubes/cube5.png');
+  background-size: 200%;
+  background-position-x: center;
+  background-position-y: 50%;
+}
+
+#cube1 {
+  background-image: url('../assets//images/cubes/cube6.png');
+  background-size: 170%;
+  background-position-x: center;
+  background-position-y: 50%;
+}
