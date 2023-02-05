@@ -10,7 +10,6 @@ const ProjectsPage = () => {
   const [projectsStateData, setProjectsStateData] = useState([]);
   const [previewImageSrc, setPreviewImageSrc] = useState("");
 
-  const ref = useRef(null);
   const previewImgRef = useRef(null);
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -71,34 +70,34 @@ const ProjectsPage = () => {
   useBodyScrollLock(isOpen);
 
   return (
-    <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'} ref={ref}>
+    <>
       <Layout
         title={"Cyriac du Chatenet - Portfolio"}
         description={
           "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
         }
       >
-        <div className={''}>
-          <div className={''}>
-            <h1 className={''} ref={titleRef}>
-              Projects <span>{projectsStateData.length}</span>
+        <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-12'}>
+          <div className={'pt-20 pb-10'}>
+            <h1 className={'font-secondary uppercase text-blue text-6xl sm:text-6xl xl:text-8xl'} ref={titleRef}>
+              Projects <span className="text-2xl">{projectsStateData.length}</span>
             </h1>
-            <p className={''} ref={descriptionRef}>
+            <p className={'text-sm lg:text-base'} ref={descriptionRef}>
               Some cool projects i’ve done in school or my work internship
             </p>
           </div>
-          <div className={''}>
+          <div className={'flex flex-col lg:flex-row xl:mt-10'}>
             <img
               src={previewImageSrc}
               alt=""
-              className={''}
+              className={'xl:w-1/2 xl:h-1/2 rounded-xl'}
               ref={previewImgRef}
             />
-            <ul className={''} ref={listRef}>
+            <ul className={'xl:pl-40'} ref={listRef}>
               {projectsStateData.map((project: any, index: number) => (
                 <li
                   key={project._id}
-                  className={''}
+                  className={'uppercase text-base'}
                   onMouseEnter={() => {
                     handleAnimatePreview();
                     setPreviewImageSrc(project.thumbnail);
@@ -123,7 +122,7 @@ const ProjectsPage = () => {
           </div>
         </div>
       </Layout>
-    </div>
+    </>
   );
 };
 
