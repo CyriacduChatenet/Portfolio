@@ -6,8 +6,6 @@ import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 import BottomBanner from "@/components/bottomBanner";
 
-import styles from "@/pages/project/style.module.scss";
-
 const ProjectPage = () => {
   const [data, setData] = useState<any>({});
   const [openModal, setOpenModal] = useState(false);
@@ -64,29 +62,29 @@ const ProjectPage = () => {
 
   return (
     <>
-      <div className={styles.header}>
+      <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'}>
         <Layout
           title={"Cyriac du Chatenet - Portfolio"}
           description={
             "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
           }
         >
-          <div className={styles.container}>
-            <div className={styles.contentTitle}>
-              <h1 className={styles.title} ref={titleRef}>
+          <div className={''}>
+            <div className={''}>
+              <h1 className={''} ref={titleRef}>
                 {data.title}
               </h1>
             </div>
-            <div className={styles.carouselContainer} ref={carouselRef}>
-              <img src={data.thumbnail} alt="" className={styles.image} />
+            <div className={''} ref={carouselRef}>
+              <img src={data.thumbnail} alt="" className={''} />
             </div>
-            <section className={styles.content}>
-              <div className={styles.block} ref={aboutRef}>
-                <h2 className={styles.subtitle}>About</h2>
-                <div className={styles.aboutBlock}>
+            <section className={''}>
+              <div className={''} ref={aboutRef}>
+                <h2 className={''}>About</h2>
+                <div className={''}>
                   <a
                     href={data.website_url}
-                    className={styles.website_link}
+                    className={''}
                     target={"_blank"}
                     rel="noreferrer"
                   >
@@ -104,12 +102,12 @@ const ProjectPage = () => {
                     </svg>
                   </a>
                   <p>Year: {data.year}</p>
-                  <p className={styles.content}>{data.about}</p>
+                  <p className={''}>{data.about}</p>
                 </div>
               </div>
-              <div className={styles.block} ref={missionRef}>
-                <h2 className={styles.subtitle}>Mission</h2>
-                <ul className={styles.missions}>
+              <div className={''} ref={missionRef}>
+                <h2 className={''}>Mission</h2>
+                <ul className={''}>
                   {data.missions?.map((mission: any) => (
                     <li key={mission._id}>
                       {mission.name} : {mission.description}
@@ -117,13 +115,12 @@ const ProjectPage = () => {
                   ))}
                 </ul>
               </div>
-              <div className={styles.block} ref={teamRef}>
-                <h2 className={styles.subtitle}>Team</h2>
-                <ul className={styles.users}>
+              <div className={''} ref={teamRef}>
+                <ul className={''}>
                   {data.team?.map((user: any) => (
                     <a
                       key={user._id}
-                      className={styles.userLink}
+                      className={''}
                       onClick={() => setOpenModal(true)}
                       href={
                         user.website === ""
@@ -137,11 +134,11 @@ const ProjectPage = () => {
                       target={"_blank"}
                       rel="noreferrer"
                     >
-                      <li className={styles.user}>
+                      <li className={''}>
                         <img
                           src={user.profile_picture}
                           alt=""
-                          className={styles.profile_picture}
+                          className={''}
                         />
                         <span>{user.name}</span>
                       </li>
@@ -150,13 +147,13 @@ const ProjectPage = () => {
                 </ul>
               </div>
             </section>
-            <section className={styles.images}>
+            <section className={''}>
               {data.images?.map((image: any, index: number) => (
                 <img
                   key={image._id}
                   src={image.source}
                   alt={""}
-                  className={styles.img}
+                  className={''}
                 />
               ))}
             </section>

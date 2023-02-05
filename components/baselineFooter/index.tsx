@@ -1,11 +1,8 @@
 import { FC, memo, useEffect, useState } from "react";
+import Link from "next/link";
 
 import WakatimeService from "@/services/wakatime.service";
 import { HOUR } from "@/constants";
-import useFetch from "@/hooks/useFetch";
-
-import styles from "@/components/baselineFooter/style.module.scss";
-import Link from "next/link";
 
 interface IProps {
   displayTalks: boolean;
@@ -31,28 +28,16 @@ const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <p className={styles.time}>
+    <div className={'py-4 w-full h-28 sm:h-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center justify-between'}>
+      <p className={'text-sm sm:text-base lg:text-base xl:text-base 2xl:text-base'}>
         {Math.round(count)}h of developement this year
       </p>
       {displayTalks ? (
         <>
-          <a href="" className={styles.talksButton} id={styles.mobileLink}>
-            My last talk
-          </a>
-          <div id={styles.desktopLink}>
-            <Link href={"/talk/design-tokens"} className={styles.talksButton}>
+          <div className={''}>
+            <Link href={"/talk/design-tokens"} className={'px-6 py-4 text-sm sm:text-base lg:text-base xl:text-base 2xl:text-base border-solid border-black border-2 rounded-3xl'}>
               My last talk
             </Link>
-            <a
-              href={"https://www.youtube.com/watch?v=r_JTTswNdIs"}
-              target={"_blank"}
-              className={styles.meetupLink}
-              rel="noreferrer"
-            >
-              Tech Ctrl - How design token will change our life as designer /
-              developper ?
-            </a>
           </div>
         </>
       ) : null}

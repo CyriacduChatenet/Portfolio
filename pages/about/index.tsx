@@ -7,8 +7,6 @@ import Layout from "@/components/layout";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
-import styles from "@/pages/about/style.module.scss";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutPage = () => {
@@ -169,27 +167,28 @@ const AboutPage = () => {
   }, []);
 
   return (
+    <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'}>
     <Layout
       title={"Cyriac du Chatenet - Portfolio"}
       description={
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <main className={styles.container} data-scroll-container ref={ref}>
-        <div className={styles.titleContent}>
-          <h1 className={styles.title} ref={titleRef}>
+      <main className={''} ref={ref}>
+        <div className={''}>
+          <h1 className={''} ref={titleRef}>
             About me
           </h1>
-          <p className={styles.description} ref={descriptionRef}>
+          <p className={''} ref={descriptionRef}>
             I’m self-taugh creative developer and Ux -Ui designer
           </p>
         </div>
-        <div className={styles.content}>
-          <div className={styles.textContent}>
-            <h2 className={styles.subtitle} ref={nameRef}>
+        <div className={''}>
+          <div className={''}>
+            <h2 className={''} ref={nameRef}>
               Cyriac du Chatenet
             </h2>
-            <p className={styles.text} ref={contentRef}>
+            <p className={''} ref={contentRef}>
               Hello, i’m french fullstack developper and Ux - Ui designer. I
               have started to create a lot of wireframes since 2019 and create
               frontend part of website since 2020.
@@ -216,20 +215,20 @@ const AboutPage = () => {
           <img
             src="https://avatars.githubusercontent.com/u/83903574?v=4"
             alt=""
-            className={styles.profilePicture}
+            className={''}
           />
         </div>
-        <div className={styles.skills}>
-          <h2 className={styles.skillsTitle} ref={skillsTitleRef}>
+        <div className={''}>
+          <h2 className={''} ref={skillsTitleRef}>
             Skills
           </h2>
-          <ul className={styles.skillsList}>
+          <ul className={''}>
             {skills.map((skill, index) => (
-              <li className={styles.skill} key={skill.name} id={`lang-${index}`}>
+              <li className={''} key={skill.name} id={`lang-${index}`}>
                 <a
                   href={skill.url}
                   target={"_blank"}
-                  className={styles.skillLink}
+                  className={''}
                   rel="noreferrer"
                 >
                   {skill.name}
@@ -241,6 +240,7 @@ const AboutPage = () => {
       </main>
       <ContactFooter />
     </Layout>
+    </div>
   );
 };
 

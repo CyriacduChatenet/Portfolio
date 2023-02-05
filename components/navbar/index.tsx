@@ -2,7 +2,6 @@ import { FC, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 
-import styles from "@/components/navbar/style.module.scss";
 import useMenu from "@/contexts/useMenu";
 
 const Navbar: FC = () => {
@@ -14,7 +13,7 @@ const Navbar: FC = () => {
   const handleClickAnimate = () => {
     if (isOpen === false) {
       gsap.to(firstLine.current, { rotation: 45, y: 9, ease: "ease-out" });
-      gsap.to(secondLine.current, { rotation: -45, y: -9, ease: "ease-out" });
+      gsap.to(secondLine.current, { rotation: -45, y: -12.5, ease: "ease-out" });
       setIsOpen(!isOpen);
     } else {
       gsap.to(firstLine.current, { rotation: 0, y: 0, ease: "ease-in" });
@@ -24,27 +23,27 @@ const Navbar: FC = () => {
   };
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={'flex items-center justify-between'}>
       <Link
         href={"/"}
-        className={styles.logoLink}
+        className={''}
       >
         {isOpen ? (
-          <img src={"logoDark.png"} alt={""} width={"50%"} />
+          <img src={"logoDark.png"} alt={""} className={'max-w-20 max-h-12'} />
         ) : (
-          <img src={"logoLight.png"} alt={""} width={"50%"} />
+          <img src={"logoLight.png"} alt={""} className={'max-w-20 max-h-12'}  />
         )}
       </Link>
-      <button className={styles.menuButton} onClick={handleClickAnimate}>
+      <button className={'flex flex-col items-center justify-around w-12 h-12'} onClick={handleClickAnimate}>
         <div
-          className={styles.line}
+          className={'w-full h-1'}
           ref={firstLine}
           style={
             isOpen ? { backgroundColor: "white" } : { backgroundColor: "black" }
           }
         ></div>
         <div
-          className={styles.line}
+          className={'w-full h-1'}
           ref={secondLine}
           style={
             isOpen ? { backgroundColor: "white" } : { backgroundColor: "black" }

@@ -7,8 +7,6 @@ import ContactFooter from "@/components/contactFooter";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
-import styles from "@/pages/talk/style.module.scss";
-
 const TalkPage = () => {
   const ref = useRef(null);
   const titleRef = useRef(null);
@@ -60,25 +58,25 @@ const TalkPage = () => {
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <div className={styles.container} data-scroll-container ref={ref}>
-        <div className={styles.contentTitle}>
-          <h1 className={styles.title} ref={titleRef}>
+      <div className={''} ref={ref}>
+        <div className={''}>
+          <h1 className={''} ref={titleRef}>
             Design tokens
           </h1>
-          <p className={styles.description} ref={descriptionRef}>
+          <p className={''} ref={descriptionRef}>
             Tech Ctrl - How design token will change our life as designer /
             developer ?
           </p>
         </div>
-        <div className={styles.content}>
+        <div className={''}>
           <ReactPlayer
             url="https://www.youtube.com/watch?v=r_JTTswNdIs"
             width={"100%"}
           />
-          <div className={styles.categories}>
-            <div className={styles.category} ref={aboutRef}>
-              <h3 className={styles.categoryTitle}>About</h3>
-              <p className={styles.contentDescription}>
+          <div className={''}>
+            <div className={''} ref={aboutRef}>
+              <h3 className={''}>About</h3>
+              <p className={''}>
                 I present my first Meetup at Ctrl Up event named Tech CTRL.{" "}
                 <br /> <br />
                 This meetup is about design tokens. It’s transversal subject
@@ -86,54 +84,54 @@ const TalkPage = () => {
                 application creation and production.
               </p>
             </div>
-            <div className={styles.category} ref={teamRef}>
-              <h3 className={styles.categoryTitle}>Team</h3>
-              <div className={styles.team}>
-                <div className={styles.userContainer}>
+            <div className={''} ref={teamRef}>
+              <h3 className={''}>Team</h3>
+              <div className={''}>
+                <div className={''}>
                   <img
                     src="https://avatars.githubusercontent.com/u/83903574?v=4"
                     alt=""
-                    className={styles.profile_picture}
+                    className={''}
                   />
                 </div>
-                <div className={styles.userContainer}>
+                <div className={''}>
                   <img
                     src="https://annuaire.frenchtechbordeaux.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWxrT0RBME56WXpOaTA1TkRKbUxUUmxOR010T1RrNU5pMW1OMlExTkdVNVl6Y3hZVFFHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--82e5d254293faff41e909bb6be12976715df0c8c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2QzNKbGMybDZaVWtpQ2pFeE16UStCanNHVkRvTWNYVmhiR2wwZVdsTCIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--554d5f8f076be7570d1bb3778f983924169bdcd4/LOGO-CTRL-UP-567p.png"
                     alt=""
-                    className={styles.profile_picture}
+                    className={''}
                   />
                 </div>
               </div>
             </div>
-            <div className={styles.category} ref={socialNetworkRef}>
-              <h3 className={styles.categoryTitle}>Social Networks</h3>
-              <ul className={styles.socialNetworks}>
-                <li className={styles.socialNetwork}>
+            <div className={''} ref={socialNetworkRef}>
+              <h3 className={''}>Social Networks</h3>
+              <ul className={''}>
+                <li className={''}>
                   <a
                     href="https://www.youtube.com/@ctrlup"
                     target={"_blank"}
                     rel="noreferrer"
-                    className={styles.socialNetworkLink}
+                    className={''}
                   >
                     Youtube
                   </a>
                 </li>
-                <li className={styles.socialNetwork}>
+                <li className={''}>
                   <a
                     href="https://www.linkedin.com/company/ctrlup/"
                     target={"_blank"}
                     rel="noreferrer"
-                    className={styles.socialNetworkLink}
+                    className={''}
                   >
                     Linkedin
                   </a>
                 </li>
-                <li className={styles.socialNetwork}>
+                <li className={''}>
                   <a
                     href="https://www.ctrlup.io/"
                     target={"_blank"}
                     rel="noreferrer"
-                    className={styles.socialNetworkLink}
+                    className={''}
                   >
                     Website
                   </a>

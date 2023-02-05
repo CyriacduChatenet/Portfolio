@@ -6,8 +6,6 @@ import Layout from "@/components/layout";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
-import styles from "@/pages/projects/style.module.scss";
-
 const ProjectsPage = () => {
   const [projectsStateData, setProjectsStateData] = useState([]);
   const [previewImageSrc, setPreviewImageSrc] = useState("");
@@ -73,34 +71,34 @@ const ProjectsPage = () => {
   useBodyScrollLock(isOpen);
 
   return (
-    <div className={styles.header} data-scroll-container ref={ref}>
+    <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'} ref={ref}>
       <Layout
         title={"Cyriac du Chatenet - Portfolio"}
         description={
           "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
         }
       >
-        <div className={styles.container}>
-          <div className={styles.titleContent}>
-            <h1 className={styles.title} ref={titleRef}>
+        <div className={''}>
+          <div className={''}>
+            <h1 className={''} ref={titleRef}>
               Projects <span>{projectsStateData.length}</span>
             </h1>
-            <p className={styles.description} ref={descriptionRef}>
+            <p className={''} ref={descriptionRef}>
               Some cool projects i’ve done in school or my work internship
             </p>
           </div>
-          <div className={styles.content}>
+          <div className={''}>
             <img
               src={previewImageSrc}
               alt=""
-              className={styles.projectPreview}
+              className={''}
               ref={previewImgRef}
             />
-            <ul className={styles.projectsList} ref={listRef}>
+            <ul className={''} ref={listRef}>
               {projectsStateData.map((project: any, index: number) => (
                 <li
                   key={project._id}
-                  className={styles.projectCard}
+                  className={''}
                   onMouseEnter={() => {
                     handleAnimatePreview();
                     setPreviewImageSrc(project.thumbnail);
@@ -112,12 +110,12 @@ const ProjectsPage = () => {
                 >
                   <Link
                     href={`/project/${project.link_title}`}
-                    className={styles.projectLink}
+                    className={''}
                   >
                     <span>
                       <b>{project.title}</b>&nbsp; - &nbsp;{project.category}
                     </span>
-                    <div className={styles.line}></div>
+                    <div className={''}></div>
                   </Link>
                 </li>
               ))}

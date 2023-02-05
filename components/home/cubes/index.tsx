@@ -1,8 +1,6 @@
 import { FC, useEffect, useRef } from "react";
 import gsap from "gsap";
 
-import styles from "@/components/home/cubes/style.module.scss";
-
 const Cubes: FC = () => {
   const cubeContainerRef = useRef(null);
   const cube1Ref = useRef(null);
@@ -36,18 +34,18 @@ const Cubes: FC = () => {
     handleAnimate();
   }, [])
   return (
-    <div className={styles.container} ref={cubeContainerRef} >
-      <div className={styles.cubeContainer}>
-        <div className={styles.cube} id={styles.cube1} ref={cube1Ref}></div>
-        <div className={styles.cube} id={styles.cube2} ref={cube2Ref}></div>
-        <div className={styles.cube} id={styles.cube3} ref={cube3Ref}></div>
+    <div className={''} ref={cubeContainerRef} >
+      <div className={''}>
+        <div className={''} ref={cube1Ref}></div>
+        <div className={''} ref={cube2Ref}></div>
+        <div className={''} ref={cube3Ref}></div>
       </div>
-      <div className={styles.cubeContainer}>
-        <div className={styles.cube} id={styles.cube4} ref={cube4Ref}></div>
-        <div className={styles.cube} id={styles.cube6} ref={cube6Ref}></div>
+      <div className={''}>
+        <div className={''} ref={cube4Ref}></div>
+        <div className={''} ref={cube6Ref}></div>
       </div>
-      <div className={styles.cubeContainer}>
-        <div className={styles.cube} id={styles.cube5} ref={cube5Ref}></div>
+      <div className={''}>
+        <div className={''} id={''} ref={cube5Ref}></div>
       </div>
     </div>
   );

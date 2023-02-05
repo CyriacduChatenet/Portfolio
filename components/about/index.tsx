@@ -1,14 +1,12 @@
 import { FC } from "react";
 
-import styles from '@/components/about/style.module.scss';
-
 const AboutSection: FC = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.line}></div>
-            <h1 className={styles.name}>Cyriac du Chatenet</h1>
-            <div className={styles.about}>
-              <p className={styles.aboutContent}>
+        <div className={''}>
+            <div className={''}></div>
+            <h1 className={''}>Cyriac du Chatenet</h1>
+            <div className={''}>
+              <p className={''}>
                 Hello, i’m french fullstack developper and Ux - Ui designer. I
                 have started to create a lot of wireframes since 2019 and create
                 frontend part of website since 2020. <br/><br/>Passionate by computer
@@ -27,7 +25,7 @@ const AboutSection: FC = () => {
                 developement at Dotmind. I create bookshelf app in React and
                 React Native.
               </p>
-              <img src="https://avatars.githubusercontent.com/u/83903574?v=4" alt="" className={styles.profile} />
+              <img src="https://avatars.githubusercontent.com/u/83903574?v=4" alt="" className={''} />
             </div>
         </div>
     );

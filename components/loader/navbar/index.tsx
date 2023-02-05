@@ -1,7 +1,5 @@
 import { FC, useEffect, useState } from "react";
 
-import styles from '@/components/loader/navbar/style.module.scss';
-
 const LoaderNavbar: FC = () => {
     const [dateNow, setDateNow] = useState('');
 
@@ -22,9 +20,9 @@ const LoaderNavbar: FC = () => {
       }, []);
 
     return (
-        <div className={styles.navbar}>
-          <p className={styles.update}>Last update : {dateNow}</p>
-          <div className={styles.loader}></div>
+        <div className={''}>
+          <p className={''}>Last update : {dateNow}</p>
+          <div className={''}></div>
         </div>
     );
 };

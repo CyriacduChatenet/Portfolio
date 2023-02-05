@@ -1,9 +1,7 @@
 import { FC, memo, useEffect, useState } from "react";
 
 import BaselineFooter from "@/components/baselineFooter";
-import { useLoader } from "@/contexts/useLoader";
-
-import styles from "@/components/loader/style.module.scss";
+import { useLoader } from "@/contexts/useLoader"
 import { useBodyScrollLock } from "@/hooks/useBodyScroll";
 import LoaderNavbar from "./navbar";
 
@@ -44,13 +42,13 @@ const Loader: FC = () => {
     });
 
   return (
-    <div className={styles.container}>
+    <div className={''}>
       <LoaderNavbar />
-      <section className={styles.content}>
-        <h1 className={styles.percentage}>{counter}%</h1>
-        <p className={styles.description}>{message}</p>
+      <section className={''}>
+        <h1 className={''}>{counter}%</h1>
+        <p className={''}>{message}</p>
       </section>
-      <div className={styles.margin}>
+      <div className={''}>
         <BaselineFooter displayTalks={false} />
       </div>
     </div>

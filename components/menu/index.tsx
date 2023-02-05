@@ -1,12 +1,10 @@
 import { NextComponentType } from "next";
 import Link from "next/link";
+import gsap from "gsap";
 import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import useMenu from "@/contexts/useMenu";
 import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
-
-import styles from "@/components/menu/style.module.scss";
-import gsap from "gsap";
 
 
 const Menu: NextComponentType = () => {
@@ -55,12 +53,12 @@ const Menu: NextComponentType = () => {
   }, []);
 
   return (
-    <div className={styles.content} ref={menuContainer}>
-      <ul className={styles.navList}>
+    <div className={''} ref={menuContainer}>
+      <ul className={''}>
         <li>
           <Link
             href={"/"}
-            className={styles.navLink}
+            className={''}
             onClick={() => setIsOpen(false)}
             ref={homeMenuEntry}
             onMouseEnter={() => handleLineAnimate(homeMenuLine)}
@@ -68,12 +66,12 @@ const Menu: NextComponentType = () => {
           >
             Home
           </Link>
-          <div className={styles.line} ref={homeMenuLine}></div>
+          <div className={''} ref={homeMenuLine}></div>
         </li>
         <li>
           <Link
             href={"/projects"}
-            className={styles.navLink}
+            className={''}
             onClick={() => setIsOpen(false)}
             ref={projectsMenuEntry}
             onMouseEnter={() => handleLineAnimate(projectsMenuLine)}
@@ -81,12 +79,12 @@ const Menu: NextComponentType = () => {
           >
             Projects ({length})
           </Link>
-          <div className={styles.line} ref={projectsMenuLine}></div>
+          <div className={''} ref={projectsMenuLine}></div>
         </li>
         <li>
           <Link
             href={"/talks"}
-            className={styles.navLink}
+            className={''}
             onClick={() => setIsOpen(false)}
             ref={talksMenuEntry}
             onMouseEnter={() => handleLineAnimate(talksMenuLine)}
@@ -94,12 +92,12 @@ const Menu: NextComponentType = () => {
           >
             Talks (1)
           </Link>
-          <div className={styles.line} ref={talksMenuLine}></div>
+          <div className={''} ref={talksMenuLine}></div>
         </li>
         <li>
           <Link
             href={"/about"}
-            className={styles.navLink}
+            className={''}
             onClick={() => setIsOpen(false)}
             ref={aboutMenuEntry}
             onMouseEnter={() => handleLineAnimate(aboutMenuLine)}
@@ -107,7 +105,7 @@ const Menu: NextComponentType = () => {
           >
             About
           </Link>
-          <div className={styles.line} ref={aboutMenuLine}></div>
+          <div className={''} ref={aboutMenuLine}></div>
         </li>
       </ul>
     </div>

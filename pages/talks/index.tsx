@@ -7,8 +7,6 @@ import ContactFooter from "@/components/contactFooter";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 
-import styles from "@/pages/talks/style.module.scss";
-
 const TalksPage = () => {
   const ref = useRef(null);
   const titleRef = useRef(null);
@@ -48,31 +46,32 @@ const TalksPage = () => {
   }, []);
 
   return (
+    <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'}>
     <Layout
       title={"Cyriac du Chatenet - Portfolio"}
       description={
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <div className={styles.container} data-scroll-container ref={ref}>
-        <div className={styles.titleContainer}>
-          <h1 className={styles.title} ref={titleRef}>
+      <div className={''} ref={ref}>
+        <div className={''}>
+          <h1 className={''} ref={titleRef}>
             Talks
           </h1>
-          <p className={styles.description} ref={descriptionRef}>
+          <p className={''} ref={descriptionRef}>
             My different talks in developer conference
           </p>
         </div>
-        <div className={styles.content}>
+        <div className={''}>
           <img
             src="https://secure.meetupstatic.com/photos/event/9/4/a/d/600_502718061.jpeg"
             alt=""
-            className={styles.talkPreview}
+            className={''}
             ref={previewRef}
           />
-          <ul className={styles.talksList}>
-            <li className={styles.talkCard} ref={projectRef}>
-              <Link href={`/talk/design-tokens`} className={styles.talkLink}>
+          <ul className={''}>
+            <li className={''} ref={projectRef}>
+              <Link href={`/talk/design-tokens`} className={''}>
                 Tech Ctrl - How design token will change our life as designer /
                 developper ?
               </Link>
@@ -82,6 +81,7 @@ const TalksPage = () => {
       </div>
       <ContactFooter />
     </Layout>
+    </div>
   );
 };
 

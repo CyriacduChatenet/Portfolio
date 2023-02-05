@@ -1,8 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import styles from '@/components/bottomBanner/style.module.scss';
-
 
 interface IProps {
     label: string;
@@ -11,8 +9,8 @@ interface IProps {
 
 const BottomBanner: FC<IProps> = ({label}) => {
     return (
-        <section className={styles.container}>
-            <Link href={'/projects'} className={styles.title}>{label}</Link>
+        <section className={''}>
+            <Link href={'/projects'} className={''}>{label}</Link>
         </section>
     );
 };

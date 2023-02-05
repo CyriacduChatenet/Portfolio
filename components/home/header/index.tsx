@@ -3,8 +3,6 @@ import gsap from "gsap";
 
 import useMenu from "@/contexts/useMenu";
 
-import styles from '@/components/header/style.module.scss';
-
 
 interface IProps {
     title: string;
@@ -31,9 +29,9 @@ const Header: FC<IProps> = ({ title, description}) => {
     }, [])
 
     return (
-        <header className={styles.container}>
-            <h1 className={styles.title} ref={titleRef}>{title}</h1>
-            <p className={styles.titleDescription} ref={descriptionRef}>{description}</p>
+        <header className={''}>
+            <h1 className={''} ref={titleRef}>{title}</h1>
+            <p className={''} ref={descriptionRef}>{description}</p>
         </header>
     );
 };
