@@ -20,10 +20,6 @@ const AboutPage = () => {
       url: "https://www.typescriptlang.org/",
     },
     {
-      name: "Angular",
-      url: "https://angular.io/",
-    },
-    {
       name: "NestJS",
       url: "https://nestjs.com/",
     },
@@ -167,28 +163,28 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'}>
+    <>
     <Layout
       title={"Cyriac du Chatenet - Portfolio"}
       description={
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <main className={''} ref={ref}>
-        <div className={''}>
-          <h1 className={''} ref={titleRef}>
+      <main className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-12 bg-white text-sm'} ref={ref}>
+        <div className={'pt-20 pb-10'}>
+          <h1 className={'font-secondary uppercase text-blue text-6xl sm:text-6xl xl:text-8xl'} ref={titleRef}>
             About me
           </h1>
-          <p className={''} ref={descriptionRef}>
+          <p className={'text-sm lg:text-base'} ref={descriptionRef}>
             I’m self-taugh creative developer and Ux -Ui designer
           </p>
         </div>
-        <div className={''}>
-          <div className={''}>
-            <h2 className={''} ref={nameRef}>
+        <div className={'flex flex-col-reverse xl:flex-row xl:items-center xl:justify-between'}>
+          <div className={'xl:w-1/2'}>
+            <h2 className={'pb-4 font-bold text-lg'} ref={nameRef}>
               Cyriac du Chatenet
             </h2>
-            <p className={''} ref={contentRef}>
+            <p className={'pb-10'} ref={contentRef}>
               Hello, i’m french fullstack developper and Ux - Ui designer. I
               have started to create a lot of wireframes since 2019 and create
               frontend part of website since 2020.
@@ -215,20 +211,20 @@ const AboutPage = () => {
           <img
             src="https://avatars.githubusercontent.com/u/83903574?v=4"
             alt=""
-            className={''}
+            className={'pb-10'}
           />
         </div>
         <div className={''}>
-          <h2 className={''} ref={skillsTitleRef}>
+          <h2 className={'font-secondary uppercase text-blue text-7xl xl:text-8xl md:pt-12'} ref={skillsTitleRef}>
             Skills
           </h2>
-          <ul className={''}>
+          <ul className={'py-4 flex flex-col sm:flex-row flex-wrap justify-between lg:justify-around lg:px-20'}>
             {skills.map((skill, index) => (
-              <li className={''} key={skill.name} id={`lang-${index}`}>
+              <li className={'py-2 sm:px-8'} key={skill.name} id={`lang-${index}`}>
                 <a
                   href={skill.url}
                   target={"_blank"}
-                  className={''}
+                  className={'uppercase'}
                   rel="noreferrer"
                 >
                   {skill.name}
@@ -240,7 +236,7 @@ const AboutPage = () => {
       </main>
       <ContactFooter />
     </Layout>
-    </div>
+    </>
   );
 };
 

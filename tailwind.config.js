@@ -16,7 +16,13 @@ module.exports = {
     colors: {
       'white': '#FFFFFF',
       'black': '#0000000',
-      'blue':'#0C25AE'
+      'blue':'#0C25AE',
+      'dark': '#050F29'
+    },
+    extend: {
+      backgroundImage: {
+        'background': "url('assets/images/backgroundjpg')",
+      }
     }
   },
   plugins: [],

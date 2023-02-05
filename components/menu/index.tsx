@@ -53,12 +53,12 @@ const Menu: NextComponentType = () => {
   }, []);
 
   return (
-    <div className={''} ref={menuContainer}>
-      <ul className={''}>
+    <div className={'absolute z-20 w-screen h-screen bg-dark'} ref={menuContainer}>
+      <ul className={'flex flex-col justify-around h-3/4 pl-24 sm:pl-48 md:pl-64 lg:pl-80 xl:pl-96 2xl:ml-80 pt-32 text-white'}>
         <li>
           <Link
             href={"/"}
-            className={''}
+            className={'text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl uppercase'}
             onClick={() => setIsOpen(false)}
             ref={homeMenuEntry}
             onMouseEnter={() => handleLineAnimate(homeMenuLine)}
@@ -71,7 +71,7 @@ const Menu: NextComponentType = () => {
         <li>
           <Link
             href={"/projects"}
-            className={''}
+            className={'text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl uppercase'}
             onClick={() => setIsOpen(false)}
             ref={projectsMenuEntry}
             onMouseEnter={() => handleLineAnimate(projectsMenuLine)}
@@ -84,7 +84,7 @@ const Menu: NextComponentType = () => {
         <li>
           <Link
             href={"/talks"}
-            className={''}
+            className={'text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl uppercase'}
             onClick={() => setIsOpen(false)}
             ref={talksMenuEntry}
             onMouseEnter={() => handleLineAnimate(talksMenuLine)}
@@ -97,7 +97,7 @@ const Menu: NextComponentType = () => {
         <li>
           <Link
             href={"/about"}
-            className={''}
+            className={'text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl uppercase'}
             onClick={() => setIsOpen(false)}
             ref={aboutMenuEntry}
             onMouseEnter={() => handleLineAnimate(aboutMenuLine)}

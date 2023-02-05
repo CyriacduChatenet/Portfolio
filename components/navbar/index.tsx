@@ -23,7 +23,7 @@ const Navbar: FC = () => {
   };
 
   return (
-    <nav className={'flex items-center justify-between'}>
+    <nav className={'flex items-center justify-between absolute z-40 w-full px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'}>
       <Link
         href={"/"}
         className={''}

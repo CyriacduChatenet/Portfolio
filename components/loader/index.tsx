@@ -42,11 +42,11 @@ const Loader: FC = () => {
     });
 
   return (
-    <div className={''}>
+    <div className={'aboslute z-10 w-screen h-screen flex flex-col justify-between'}>
       <LoaderNavbar />
-      <section className={''}>
-        <h1 className={''}>{counter}%</h1>
-        <p className={''}>{message}</p>
+      <section className={'w-full h-20 flex flex-col items-center justify-center 2xl:pt-20'}>
+        <h1 className={'text-8xl md:text-9xl pb-4'}>{counter}%</h1>
+        <p className={'text-base pt-4'}>{message}</p>
       </section>
       <div className={''}>
         <BaselineFooter displayTalks={false} />
