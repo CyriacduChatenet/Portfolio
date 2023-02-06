@@ -46,14 +46,14 @@ const TalksPage = () => {
   }, []);
 
   return (
-    <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8'}>
+    <>
     <Layout
       title={"Cyriac du Chatenet - Portfolio"}
       description={
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <div className={''} ref={ref}>
+      <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-12'} ref={ref}>
         <div className={''}>
           <h1 className={''} ref={titleRef}>
             Talks
@@ -81,7 +81,7 @@ const TalksPage = () => {
       </div>
       <ContactFooter />
     </Layout>
-    </div>
+    </>
   );
 };
 
