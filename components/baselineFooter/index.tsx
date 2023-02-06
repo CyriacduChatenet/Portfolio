@@ -28,7 +28,7 @@ const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
   }, []);
 
   return (
-    <div className={"py-4 w-full h-28 sm:h-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center justify-between sm:mt-48 lg:mt-48 xl:mt-60 2xl:mt-72 mt-20"}>
+    <div className={"py-4 w-full h-40 sm:h-6 md:h-6 lg:h-6 xl:h-6 2xl:h-6 flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row 2xl:flex-row items-center justify-between sm:mt-48 lg:mt-48 xl:mt-60 2xl:mt-72"}>
       <p className={"text-sm sm:text-base lg:text-base xl:text-base 2xl:text-base"}>
         {Math.round(count)}h of developement this year
       </p>

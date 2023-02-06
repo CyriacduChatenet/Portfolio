@@ -141,7 +141,7 @@ const ProjectPage = () => {
                     target={"_blank"}
                     rel="noreferrer"
                   >
-                    <li className={"flex flex-col itmes-center justify-center py-2"}>
+                    <li className={"flex flex-col itmes-center justify-center py-2 md:px-4"}>
                       <img src={user.profile_picture} alt="" className={"w-12 h-12 rounded-full"} />
                       <span>{user.name}</span>
                     </li>

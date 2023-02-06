@@ -97,7 +97,7 @@ const ProjectsPage = () => {
               {projectsStateData.map((project: any, index: number) => (
                 <li
                   key={project._id}
-                  className={'uppercase text-base'}
+                  className={'uppercase text-base border-b-[1px] border-solid border-black pb-2 my-4'}
                   onMouseEnter={() => {
                     handleAnimatePreview();
                     setPreviewImageSrc(project.thumbnail);

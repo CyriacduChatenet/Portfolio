@@ -1,5 +1,6 @@
 import { FC } from "react";
 import gsap from 'gsap';
+import background from '../../assets/images/background.jpg'
 
 const ContactFooter: FC = () => {
   const date = new Date();
@@ -10,7 +11,7 @@ const ContactFooter: FC = () => {
   };
 
   return (
-    <div className={'h-96 flex flex-col justify-around items-center rounded-lg w-full'}>
+    <div className={'h-96 flex flex-col justify-around items-center rounded-lg w-full'} style={{backgroundImage: `url('${background})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <div className={''}>
         <h3
           className={''}

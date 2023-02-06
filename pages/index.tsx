@@ -50,7 +50,7 @@ const HomePage = () => {
         <div
           className={"px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8"}
         >
-          <Cubes />
+          {/* <Cubes /> */}
           <main
             className={"flex flex-col justify-between w-full"}
             style={{ height: "80vh", zIndex: 3 }}

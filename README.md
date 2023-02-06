@@ -1,3 +1,22 @@
+# Portfolio
+
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/docs/)
+[![next](https://img.shields.io/badge/Next.js-20232A?style=for-the-badge&logo=nextdotjs&logoColor=FFFFFF)](https://nextjs.org/)
+[![Tailwind.CSS](https://img.shields.io/badge/TailwindCSS-16a1ba?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://www.typescriptlang.org/docs/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)]()
+
+## Env example
+
+```bash
+MONGODB_URL = mongodb://mongoroot:mongoroot@localhost:27017/
+MONGO_INITDB_ROOT_USERNAME = mongoroot
+MONGO_INITDB_ROOT_PASSWORD = mongoroot
+MONGO_INITDB_DATABASE = test
+MONGO_PORT = 27017
+WAKATIME_URL = 
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

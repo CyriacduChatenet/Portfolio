@@ -53,24 +53,24 @@ const TalksPage = () => {
         "Cyriac du Chatenet's portfolio of fullstack developer and Ux - Ui designer"
       }
     >
-      <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-12'} ref={ref}>
-        <div className={''}>
-          <h1 className={''} ref={titleRef}>
+      <div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-12 bg-white'} ref={ref}>
+        <div className={'mt-20'}>
+          <h1 className={'font-secondary uppercase text-blue text-6xl sm:text-8xl xl:text-8xl'} ref={titleRef}>
             Talks
           </h1>
           <p className={''} ref={descriptionRef}>
             My different talks in developer conference
           </p>
         </div>
-        <div className={''}>
+        <div className={'my-9 flex flex-col lg:flex-row justify-center itmes-center'}>
           <img
             src="https://secure.meetupstatic.com/photos/event/9/4/a/d/600_502718061.jpeg"
             alt=""
-            className={''}
+            className={'w-full lg:w-1/2'}
             ref={previewRef}
           />
-          <ul className={''}>
-            <li className={''} ref={projectRef}>
+          <ul className={'mt-4 lg:pl-12'}>
+            <li className={'uppercase'} ref={projectRef}>
               <Link href={`/talk/design-tokens`} className={''}>
                 Tech Ctrl - How design token will change our life as designer /
                 developper ?

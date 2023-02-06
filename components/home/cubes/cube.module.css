@@ -1,0 +1,193 @@
+.container {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    padding-top: 4rem;
+    height: 100%;
+}
+
+.cube {
+    width: 4rem;
+    height: 4rem;
+}
+
+.cubeContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.cubeContainer:nth-child(1) {
+    justify-content: space-around;
+    height: 6rem;
+    margin: 8rem 0 0 0;
+}
+
+.cubeContainer:nth-child(2) {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    height: 6rem;
+    margin: 2.5rem 0 0 0;
+}
+
+.cubeContainer:nth-child(3) {
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    margin: 0.5rem 0 0 0;
+}
+
+#cube1 {
+    background-image: url('../../../assets/images/cubes/cube1.png');
+    background-position: center;
+    background-size: 170%;
+    margin-top: 3rem;
+}
+
+#cube2 {
+    background-image: url('../../../assets/images/cubes/cube4.png');
+    background-position: center;
+    background-size: 130%;
+    margin-bottom: 1rem;
+}
+
+#cube3 {
+    background-image: url('../../../assets/images/cubes/cube2.png');
+    background-position: center;
+    background-size: 200%;
+    margin-top: 3rem;
+}
+
+#cube4 {
+    background-image: url('../../../assets/images/cubes/cube3.png');
+    background-position: center;
+    background-size: 170%;
+}
+
+#cube5 {
+    background-image: url('../../../assets/images/cubes/cube6.png');
+    background-position: center;
+    background-size: 140%;
+}
+
+#cube6 {
+    background-image: url('../../../assets/images/cubes/cube5.png');
+    background-position: center;
+    background-size: 220%;
+    margin-top: 0.5rem;
+}
+
+@media all and (min-width: 768px) {
+    .container {
+        margin-right: 20%;
+    }
+    .cubeContainer:nth-child(1) {
+        justify-content: space-around;
+        height: 8rem;
+        margin: 2rem 0 0 0;
+    }
+    
+    .cubeContainer:nth-child(2) {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        height: 8rem;
+        margin: 5rem 0 0 0;
+    }
+    
+    .cubeContainer:nth-child(3) {
+        align-items: center;
+        justify-content: center;
+        height: 12rem;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .cube {
+        width: 8rem;
+        height: 8rem;
+    }
+    
+    #cube1 {
+        background-image: url('../../../assets/images/cubes/cube1.png');
+        background-position: center;
+        background-size: 170%;
+        margin-top: 3rem;
+    }
+    
+    #cube2 {
+        background-image: url('../../../assets/images/cubes/cube4.png');
+        background-position: center;
+        background-size: 130%;
+        margin-bottom: 1rem;
+    }
+    
+    #cube3 {
+        background-image: url('../../../assets/images/cubes/cube2.png');
+        background-position: center;
+        background-size: 200%;
+        margin-top: 3rem;
+    }
+    
+    #cube4 {
+        background-image: url('../../../assets/images/cubes/cube3.png');
+        background-position: center;
+        background-size: 170%;
+    }
+    
+    #cube5 {
+        background-image: url('../../../assets/images/cubes/cube6.png');
+        background-position: center;
+        background-size: 140%;
+    }
+    
+    #cube6 {
+        background-image: url('../../../assets/images/cubes/cube5.png');
+        background-position: center;
+        background-size: 220%;
+        margin-top: 0.5rem;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    .container {
+        height: 65rem;
+        width: 90%;
+        padding: 0 5%;
+    }
+
+    .cube {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .cubeContainer:nth-child(1) {
+        justify-content: space-around;
+        padding-left: 12rem;
+        margin: 2rem 0 0 0;
+    }
+    
+    .cubeContainer:nth-child(2) {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        height: 12rem;
+        margin: 14rem 0 0 0;
+    }
+    
+    .cubeContainer:nth-child(3) {
+        align-items: center;
+        justify-content: center;
+        height: 6rem;
+        margin: 4rem 0 0 0;
+    }
+
+    #cube1 {
+        margin-top: 10rem;
+    }
+
+    #cube2 {
+        margin-top: -6rem;
+    }
+
+    #cube5 {
+        background-size: 120%;
+    }
+}
