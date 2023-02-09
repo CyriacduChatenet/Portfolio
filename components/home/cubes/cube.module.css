@@ -80,6 +80,8 @@
 @media all and (min-width: 768px) {
     .container {
         margin-right: 20%;
+        top:-4rem;
+        left:1rem;
     }
     .cubeContainer:nth-child(1) {
         justify-content: space-around;
@@ -147,11 +149,103 @@
     }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1024px) and (max-width:1279px) {
+    .container {
+        height: 25rem;
+        width: 90%;
+        padding: 0 5%;
+        left:4rem;
+        bottom:18rem;
+    }
+
+    .cube {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .cubeContainer:nth-child(1) {
+        justify-content: space-around;
+        padding-left: 12rem;
+    }
+    
+    .cubeContainer:nth-child(2) {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        height: 12rem;
+    }
+    
+    .cubeContainer:nth-child(3) {
+        align-items: center;
+        justify-content: center;
+        height: 6rem;
+        margin: 4rem 0 0 0;
+    }
+
+    #cube1 {
+        margin-top: 1rem;
+    }
+
+    #cube2 {
+        margin-top: -6rem;
+    }
+
+    #cube5 {
+        background-size: 120%;
+    }
+}
+
+@media all and (min-width: 1280px) and (max-width:1535px) {
+    .container {
+        height: 25rem;
+        width: 80%;
+        padding: 0 5%;
+        left:8rem;
+        bottom:26rem;
+    }
+
+    .cube {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .cubeContainer:nth-child(1) {
+        justify-content: space-around;
+        padding-left: 12rem;
+    }
+    
+    .cubeContainer:nth-child(2) {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        height: 12rem;
+    }
+    
+    .cubeContainer:nth-child(3) {
+        align-items: center;
+        justify-content: center;
+        height: 6rem;
+        margin: 4rem 0 0 0;
+    }
+
+    #cube1 {
+        margin-top: 1rem;
+    }
+
+    #cube2 {
+        margin-top: -6rem;
+    }
+
+    #cube5 {
+        background-size: 120%;
+    }
+}
+
+@media all and (min-width: 1536px) {
     .container {
         height: 65rem;
         width: 90%;
         padding: 0 5%;
+        top:3rem;
+        left:2rem;
     }
 
     .cube {

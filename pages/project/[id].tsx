@@ -155,7 +155,7 @@ const ProjectPage = () => {
               <img key={image._id} src={image.source} alt={""} className={"py-4"} />
             ))}
           </section>
-          <BottomBanner label={"Other projects"} />
+          {data._id?.length >= 0 ? <BottomBanner label={"Other projects"} />: null}
         </div>
       </Layout>
     </>

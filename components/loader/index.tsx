@@ -42,7 +42,7 @@ const Loader: FC = () => {
     });
 
   return (
-    <div className={'aboslute z-10 w-screen h-screen flex flex-col justify-between'}>
+    <div className={'aboslute z-10 w-screen h-screen flex flex-col justify-between px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 pb-8'}>
       <LoaderNavbar />
       <section className={'w-full h-20 flex flex-col items-center justify-center 2xl:pt-20'}>
         <h1 className={'text-8xl md:text-9xl pb-4'}>{counter}%</h1>
