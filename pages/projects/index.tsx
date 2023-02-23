@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import gsap from 'gsap';
 
 import Layout from '@/components/layout';
 import useMenu from '@/contexts/useMenu';
 import { useBodyScroll, useBodyScrollLock } from '@/hooks/useBodyScroll';
-import Image from 'next/image';
+import IProject from '@/types/project';
 
 const ProjectsPage = () => {
 	const [projectsStateData, setProjectsStateData] = useState([]);
@@ -19,7 +20,7 @@ const ProjectsPage = () => {
 	const handleFetchProjectsData = async () => {
 		const response = await fetch('/api/projects');
 		const json = await response.json();
-		const sortedJson = json.data.sort((p1: any, p2: any) => (p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0));
+		const sortedJson = json.data.sort((p1: IProject, p2: IProject) => (p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0));
 		setProjectsStateData(sortedJson);
 	};
 
@@ -65,7 +66,7 @@ const ProjectsPage = () => {
 					<div className={'flex flex-col lg:flex-row xl:mt-10'}>
 						<Image src={previewImageSrc} alt={''} width={1000} height={1000} className={'rounded-xl'} ref={previewImgRef}/>
 						<ul className={'xl:pl-40'} ref={listRef}>
-							{projectsStateData.map((project: any, index: number) => (
+							{projectsStateData.map((project:  IProject, index: number) => (
 								<li
 									key={project._id}
 									className={'uppercase text-base border-b-[1px] border-solid border-black pb-2 my-4'}

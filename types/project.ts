@@ -2,12 +2,13 @@ interface Image {
     source: string;
 };
 
-interface User {
+export interface User {
     name: string;
     role: string;
     profile_picture: string;
-    webiste: string;
+    website: string;
     socialNetwork: SocialNetwork[];
+    _id: string;
 };
 
 interface SocialNetwork {
@@ -16,9 +17,10 @@ interface SocialNetwork {
     link: string;
 };
 
-interface Mission {
+export interface Mission {
     name: string;
     description: string;
+    _id: string;
 }
 
 interface IProject {
@@ -33,6 +35,11 @@ interface IProject {
     images: Image[];
     team: User[];
     missions: Mission[];
+}
+
+export interface IImage {
+    source: string;
+    _id: string;
 }
 
 export default IProject;

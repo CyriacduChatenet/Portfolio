@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { ObjectExpressionOperator } from "mongoose";
 import { Dispatch, SetStateAction, useEffect } from "react";
 
 
-const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetStateAction<any>>, errorStateMutator: Dispatch<SetStateAction<any>>, body?: Object) => {
+const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetStateAction<Object>>, errorStateMutator: Dispatch<SetStateAction<ObjectExpressionOperator>>, body?: Object) => {
     const fetchData = async () => {
         try {
             const response = await fetch(url, {

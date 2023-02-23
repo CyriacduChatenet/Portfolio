@@ -7,9 +7,10 @@ import Layout from '@/components/layout';
 import useMenu from '@/contexts/useMenu';
 import { useBodyScroll, useBodyScrollLock } from '@/hooks/useBodyScroll';
 import BottomBanner from '@/components/bottomBanner';
+import IProject, { IImage, Mission, User } from '@/types/project';
 
 const ProjectPage = () => {
-	const [data, setData] = useState<any>({});
+	const [data, setData] = useState<IProject>({});
 	const [openModal, setOpenModal] = useState(false);
 
 	const { isOpen } = useMenu();
@@ -75,7 +76,7 @@ const ProjectPage = () => {
 						<div className={'flex flex-col items-center lg:w-1/3 py-8'} ref={missionRef}>
 							<h2 className={'py-1 px-20 border-solid border-black border-x border-y rounded-2xl uppercase'}>Mission</h2>
 							<ul className={'pt-4'}>
-								{data.missions?.map((mission: any) => (
+								{data.missions?.map((mission: Mission) => (
 									<li key={mission._id} className="py-2">
 										{mission.name} : {mission.description}
 									</li>
@@ -85,7 +86,7 @@ const ProjectPage = () => {
 						<div className={'flex flex-col items-center lg:w-1/3 py-8'} ref={teamRef}>
 							<h2 className={'py-1 px-20 border-solid border-black border-x border-y rounded-2xl uppercase'}>Team</h2>
 							<ul className={'pt-4 w-full flex flex-col md:flex-row items-center justify-around flex-wrap'}>
-								{data.team?.map((user: any) => (
+								{data.team?.map((user: User) => (
 									<Link
 										key={user._id}
 										href={
@@ -117,7 +118,7 @@ const ProjectPage = () => {
 						</div>
 					</section>
 					<section className={''}>
-						{data.images?.map((image: any, index: number) => (
+						{data.images?.map((image: IImage) => (
 							<Image
 								key={image._id}
 								src={image.source}

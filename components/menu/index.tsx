@@ -5,10 +5,11 @@ import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 import useMenu from "@/contexts/useMenu";
 import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
+import IProject from "@/types/project";
 
 
 const Menu: NextComponentType = () => {
-   const [projectsStateData, setProjectsStateData] = useState<any>({});
+   const [projectsStateData, setProjectsStateData] = useState<IProject>({});
 
 
   const homeMenuEntry = useRef(null);

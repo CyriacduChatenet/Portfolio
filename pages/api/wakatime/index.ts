@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-const getData = async (): Promise<any> => {
+const getData = async () => {
     const response = await axios(`${process.env.WAKATIME_URL}`);
     return response;
 };

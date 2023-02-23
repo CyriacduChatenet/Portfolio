@@ -17,7 +17,7 @@ const BaselineFooter: FC<IProps> = ({ displayTalks }) => {
   const wakatimeService = new WakatimeService();
 
   if (isLoading) {
-    data.map((day: any) => {
+    data.map((day: {total: number}) => {
       count += day.total / HOUR;
       return count;
     });
