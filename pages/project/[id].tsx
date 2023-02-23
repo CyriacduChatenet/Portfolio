@@ -137,7 +137,7 @@ const ProjectPage: NextPage<IProps> = ({data}) => {
 export default ProjectPage;
 
 
-export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 	const host = context.req.headers['x-forwarded-host'] || context.req.headers;
 
 	const response = await fetch(`https://${host.host}/api/${context.req.url}`);

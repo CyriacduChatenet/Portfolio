@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Props } from 'next/script';
 import gsap from 'gsap';
 
 import Layout from '@/components/layout';
@@ -96,8 +95,8 @@ const ProjectsPage: NextPage<IProps> = ({projectsStateData}) => {
 
 export default ProjectsPage;
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({ req }) => {
-	const host = req.headers['x-forwarded-host'] || req.headers
+export const getServerSideProps: GetServerSideProps<any> = async ({ req }) => {
+	const host = req.headers['x-forwarded-host'] || req.headers;
 
 	const response = await fetch(`https://${host.host}/api/projects`);
 	const json = await response.json();
