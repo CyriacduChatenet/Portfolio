@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Props } from 'next/script';
 import gsap from 'gsap';
 
 import Layout from '@/components/layout';
@@ -8,21 +10,18 @@ import useMenu from '@/contexts/useMenu';
 import { useBodyScroll, useBodyScrollLock } from '@/hooks/useBodyScroll';
 import IProject from '@/types/project';
 
-const ProjectsPage = () => {
-	const [projectsStateData, setProjectsStateData] = useState([]);
+
+interface IProps {
+	projectsStateData: IProject[];
+}
+
+const ProjectsPage: NextPage<IProps> = ({projectsStateData}) => {
 	const [previewImageSrc, setPreviewImageSrc] = useState('');
 
 	const previewImgRef = useRef(null);
 	const titleRef = useRef(null);
 	const descriptionRef = useRef(null);
 	const listRef = useRef(null);
-
-	const handleFetchProjectsData = async () => {
-		const response = await fetch('/api/projects');
-		const json = await response.json();
-		const sortedJson = json.data.sort((p1: IProject, p2: IProject) => (p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0));
-		setProjectsStateData(sortedJson);
-	};
 
 	const handleAnimatePreview = () => {
 		gsap.fromTo(previewImgRef.current, { opacity: 0 }, { opacity: 100, duration: 2, ease: 'power4.in' });
@@ -40,7 +39,7 @@ const ProjectsPage = () => {
 
 	useEffect(() => {
 		handleAnimate();
-		handleFetchProjectsData();
+		// handleFetchProjectsData();
 	}, []);
 
 	const { isOpen } = useMenu();
@@ -96,3 +95,16 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
+
+export const getServerSideProps: GetServerSideProps<Props> = async ({ req }) => {
+	const host = req.headers['x-forwarded-host'] || req.headers
+
+	const response = await fetch(`https://${host.host}/api/projects`);
+	const json = await response.json();
+	const sortedJson = json.data.sort((p1: IProject, p2: IProject) => (p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0));
+	return {
+		props: {
+			projectsStateData: sortedJson,
+		}
+	}
+};

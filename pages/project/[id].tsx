@@ -2,15 +2,20 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Props } from 'next/script';
+import { GetServerSideProps, NextPage } from 'next';
 
 import Layout from '@/components/layout';
 import useMenu from '@/contexts/useMenu';
 import { useBodyScroll, useBodyScrollLock } from '@/hooks/useBodyScroll';
 import BottomBanner from '@/components/bottomBanner';
-import IProject, { IImage, Mission, User } from '@/types/project';
+import IProject, { Mission } from '@/types/project';
 
-const ProjectPage = () => {
-	const [data, setData] = useState<IProject>({});
+interface IProps {
+	data: IProject
+};
+
+const ProjectPage: NextPage<IProps> = ({data}) => {
 	const [openModal, setOpenModal] = useState(false);
 
 	const { isOpen } = useMenu();
@@ -24,12 +29,6 @@ const ProjectPage = () => {
 	useBodyScroll(isOpen);
 	useBodyScrollLock(isOpen);
 
-	const handleFetchData = async () => {
-		const response = await fetch(`/api/${window.location.pathname}`);
-		const json = await response.json();
-		setData(json.data);
-	};
-
 	const handleAnimate = () => {
 		gsap.fromTo(titleRef.current, { opacity: 0 }, { opacity: 100, duration: 3, ease: 'power4.in', delay: 1 });
 		gsap.fromTo(carouselRef.current, { opacity: 0 }, { opacity: 100, duration: 3, ease: 'power4.in', delay: 1.5 });
@@ -39,7 +38,6 @@ const ProjectPage = () => {
 	};
 
 	useEffect(() => {
-		handleFetchData();
 		handleAnimate();
 	}, []);
 
@@ -86,7 +84,7 @@ const ProjectPage = () => {
 						<div className={'flex flex-col items-center lg:w-1/3 py-8'} ref={teamRef}>
 							<h2 className={'py-1 px-20 border-solid border-black border-x border-y rounded-2xl uppercase'}>Team</h2>
 							<ul className={'pt-4 w-full flex flex-col md:flex-row items-center justify-around flex-wrap'}>
-								{data.team?.map((user: User) => (
+								{data.team?.map((user: any) => (
 									<Link
 										key={user._id}
 										href={
@@ -118,7 +116,7 @@ const ProjectPage = () => {
 						</div>
 					</section>
 					<section className={''}>
-						{data.images?.map((image: IImage) => (
+						{data.images?.map((image: any) => (
 							<Image
 								key={image._id}
 								src={image.source}
@@ -129,7 +127,7 @@ const ProjectPage = () => {
 							/>
 						))}
 					</section>
-					{data._id?.length >= 0 ? <BottomBanner label={'Other projects'} /> : null}
+					{Number(data._id?.length) >= 0 ? <BottomBanner label={'Other projects'} /> : null}
 				</div>
 			</Layout>
 		</>
@@ -137,3 +135,16 @@ const ProjectPage = () => {
 };
 
 export default ProjectPage;
+
+
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+	const host = context.req.headers['x-forwarded-host'] || context.req.headers;
+
+	const response = await fetch(`https://${host.host}/api/${context.req.url}`);
+	const json = await response.json();
+	return {
+		props: {
+			data: json.data,
+		}
+	}
+};
