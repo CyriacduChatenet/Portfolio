@@ -9,7 +9,7 @@ import IProject from "@/types/project";
 
 
 const Menu: NextComponentType = () => {
-   const [projectsStateData, setProjectsStateData] = useState({});
+   const [projectsStateData, setProjectsStateData] = useState<any>({});
 
 
   const homeMenuEntry = useRef(null);
