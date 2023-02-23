@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { ObjectExpressionOperator } from "mongoose";
 import { Dispatch, SetStateAction, useEffect } from "react";
 
 
-const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetStateAction<Object>>, errorStateMutator: Dispatch<SetStateAction<ObjectExpressionOperator>>, body?: Object) => {
+const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetStateAction<Object>>, errorStateMutator: Dispatch<SetStateAction<Object>>, body?: Object) => {
     const fetchData = async () => {
         try {
             const response = await fetch(url, {
@@ -15,7 +14,7 @@ const useFetch = (url: string, method: string, dataStateMutator: Dispatch<SetSta
             const responseJSON = await response.json();
             return dataStateMutator(responseJSON);
         }
-        catch(err) {
+        catch(err: any) {
             return errorStateMutator(err)
         }
     };
