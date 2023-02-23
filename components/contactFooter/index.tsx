@@ -1,5 +1,7 @@
 import { FC } from "react";
 import gsap from 'gsap';
+import Link from "next/link";
+
 import background from '../../assets/images/background.jpg'
 
 const ContactFooter: FC = () => {
@@ -27,36 +29,13 @@ const ContactFooter: FC = () => {
       <footer className={'flex flex-col md:w-full'}>
         <ul className={'flex justify-around items-center pb-8 uppercase'}>
           <li>
-            <a
-              href={
-                "https://www.linkedin.com/in/cyriac-descubes-du-chatenet-4776911b8/"
-              }
-              target={"_blank"}
-              className={''}
-              rel="noreferrer"
-            >
-              Linkedin
-            </a>
+            <Link href={'https://www.linkedin.com/in/cyriac-descubes-du-chatenet-4776911b8/'} passHref={true} target={"_blank"}>Linkedin</Link>
           </li>
           <li>
-            <a
-              href={"https://github.com/CyriacduChatenet"}
-              target={"_blank"}
-              className={''}
-              rel="noreferrer"
-            >
-              Github
-            </a>
+          <Link href={'https://github.com/CyriacduChatenet'} passHref={true} target={"_blank"}>Github</Link>
           </li>
           <li>
-            <a
-              href={"https://www.behance.net/cyriacdescube"}
-              target={"_blank"}
-              className={''}
-              rel="noreferrer"
-            >
-              Behance
-            </a>
+          <Link href={'https://www.behance.net/cyriacdescube'} passHref={true} target={"_blank"}>Behance</Link>
           </li>
         </ul>
         <div className={'flex justify-center items-center'}>

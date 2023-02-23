@@ -7,6 +7,7 @@ import Layout from "@/components/layout";
 import ContactFooter from "@/components/contactFooter";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
+import Link from "next/link";
 
 const TalkPage = () => {
   const ref = useRef(null);
@@ -100,34 +101,13 @@ const TalkPage = () => {
               <h3 className={'py-1 px-10 border-solid border-black border-x border-y rounded-2xl uppercase'}>Social Networks</h3>
               <ul className={'pt-4 w-full flex flex-col md:flex-row items-center justify-around flex-wrap'}>
                 <li className={''}>
-                  <a
-                    href="https://www.youtube.com/@ctrlup"
-                    target={"_blank"}
-                    rel="noreferrer"
-                    className={'py-2'}
-                  >
-                    Youtube
-                  </a>
+                <Link href={'https://www.youtube.com/@ctrlup'} passHref={true} target={"_blank"} className={'py-2'}>Youtube</Link>
                 </li>
                 <li className={''}>
-                  <a
-                    href="https://www.linkedin.com/company/ctrlup/"
-                    target={"_blank"}
-                    rel="noreferrer"
-                    className={'py-2'}
-                  >
-                    Linkedin
-                  </a>
+                <Link href={'https://www.linkedin.com/company/ctrlup/'} passHref={true} target={"_blank"} className={'py-2'}>Linkedin</Link>
                 </li>
                 <li className={''}>
-                  <a
-                    href="https://www.ctrlup.io/"
-                    target={"_blank"}
-                    rel="noreferrer"
-                    className={'py-2'}
-                  >
-                    Website
-                  </a>
+                <Link href={'https://www.ctrlup.io/'} passHref={true} target={"_blank"} className={'py-2'}>Website</Link>
                 </li>
               </ul>
             </div>
