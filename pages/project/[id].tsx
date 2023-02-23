@@ -138,7 +138,7 @@ export default ProjectPage;
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const host = context.req.headers['x-forwarded-host'] || context.req.headers;
+	const host: any = context.req.headers['x-forwarded-host'] || context.req.headers;
 
 	const response = await fetch(`https://${host.host}/api/${context.req.url}`);
 	const json = await response.json();

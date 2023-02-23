@@ -96,7 +96,7 @@ const ProjectsPage: NextPage<IProps> = ({projectsStateData}) => {
 export default ProjectsPage;
 
 export const getServerSideProps: GetServerSideProps<any> = async ({ req }) => {
-	const host = req.headers['x-forwarded-host'] || req.headers;
+	const host: any = req.headers['x-forwarded-host'] || req.headers;
 
 	const response = await fetch(`https://${host.host}/api/projects`);
 	const json = await response.json();
