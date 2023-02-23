@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 
 const AboutSection: FC = () => {
     return (
@@ -25,7 +26,7 @@ const AboutSection: FC = () => {
                 developement at Dotmind. I create bookshelf app in React and
                 React Native.
               </p>
-              <img src="https://avatars.githubusercontent.com/u/83903574?v=4" alt="" className={''} />
+              <Image src={'https://avatars.githubusercontent.com/u/83903574?v=4'} layout={'fill'} alt={"my profile picture"}/>
             </div>
         </div>
     );

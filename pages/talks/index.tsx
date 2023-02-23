@@ -6,6 +6,7 @@ import Layout from "@/components/layout";
 import ContactFooter from "@/components/contactFooter";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
+import Image from "next/image";
 
 const TalksPage = () => {
   const ref = useRef(null);
@@ -63,12 +64,7 @@ const TalksPage = () => {
           </p>
         </div>
         <div className={'my-9 flex flex-col lg:flex-row justify-center itmes-center'}>
-          <img
-            src="https://secure.meetupstatic.com/photos/event/9/4/a/d/600_502718061.jpeg"
-            alt=""
-            className={'w-full lg:w-1/2'}
-            ref={previewRef}
-          />
+          <Image src={"https://secure.meetupstatic.com/photos/event/9/4/a/d/600_502718061.jpeg"} alt={"meetup preview"} width={700} height={700} ref={previewRef}/>
           <ul className={'mt-4 lg:pl-12'}>
             <li className={'uppercase'} ref={projectRef}>
               <Link href={`/talk/design-tokens`} className={''}>

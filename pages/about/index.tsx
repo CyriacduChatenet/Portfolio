@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -208,11 +209,7 @@ const AboutPage = () => {
               and React Native.
             </p>
           </div>
-          <img
-            src="https://avatars.githubusercontent.com/u/83903574?v=4"
-            alt=""
-            className={'pb-10'}
-          />
+          <Image src={'https://avatars.githubusercontent.com/u/83903574?v=4'} width={500} height={500} alt={'my profile'} className={'pb-10'}/>
         </div>
         <div className={''}>
           <h2 className={'font-secondary uppercase text-blue text-7xl xl:text-8xl md:pt-12'} ref={skillsTitleRef}>

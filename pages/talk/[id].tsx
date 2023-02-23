@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import ReactPlayer from "react-player";
 
@@ -88,18 +89,10 @@ const TalkPage = () => {
               <h3 className={'py-1 px-20 border-solid border-black border-x border-y rounded-2xl uppercase'}>Team</h3>
               <div className={'pt-4 w-full flex flex-col md:flex-row items-center justify-around flex-wrap'}>
                 <div className={''}>
-                  <img
-                    src="https://avatars.githubusercontent.com/u/83903574?v=4"
-                    alt=""
-                    className={'w-12 h-12 rounded-full'}
-                  />
+                  <Image src={"https://avatars.githubusercontent.com/u/83903574?v=4"} alt={""} width={40} height={40} className={'rounded-full'}/>
                 </div>
                 <div className={''}>
-                  <img
-                    src="https://annuaire.frenchtechbordeaux.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWxrT0RBME56WXpOaTA1TkRKbUxUUmxOR010T1RrNU5pMW1OMlExTkdVNVl6Y3hZVFFHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--82e5d254293faff41e909bb6be12976715df0c8c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2QzNKbGMybDZaVWtpQ2pFeE16UStCanNHVkRvTWNYVmhiR2wwZVdsTCIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--554d5f8f076be7570d1bb3778f983924169bdcd4/LOGO-CTRL-UP-567p.png"
-                    alt=""
-                    className={'w-12 h-12 rounded-full'}
-                  />
+                <Image src={"https://annuaire.frenchtechbordeaux.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWxrT0RBME56WXpOaTA1TkRKbUxUUmxOR010T1RrNU5pMW1OMlExTkdVNVl6Y3hZVFFHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--82e5d254293faff41e909bb6be12976715df0c8c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2QzNKbGMybDZaVWtpQ2pFeE16UStCanNHVkRvTWNYVmhiR2wwZVdsTCIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--554d5f8f076be7570d1bb3778f983924169bdcd4/LOGO-CTRL-UP-567p.png"} alt={"logo ctrl up"} width={60} height={60}  className={'rounded-full'}/>
                 </div>
               </div>
             </div>

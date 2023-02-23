@@ -5,6 +5,7 @@ import Layout from "@/components/layout";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
 import BottomBanner from "@/components/bottomBanner";
+import Image from "next/image";
 
 const ProjectPage = () => {
   const [data, setData] = useState<any>({});
@@ -81,8 +82,8 @@ const ProjectPage = () => {
               {data.title}
             </h1>
           </div>
-          <div className={""} ref={carouselRef}>
-            <img src={data.thumbnail} alt="" className={"rounded-lg lg:w-1/2 lg:ml-72 xl:ml-80 2xl:ml-96"} />
+          <div className={"rounded-lg lg:w-1/2 lg:ml-72 xl:ml-80 2xl:ml-96"} ref={carouselRef}>
+            <Image src={data.thumbnail} alt={"project thumbnail"} width={800} height={800} className={'rounded-lg'}/>
           </div>
           <section className={"my-8 flex flex-col lg:flex-row"}>
             <div className={"flex flex-col items-center py-8 lg:w-1/3"} ref={aboutRef}>
@@ -142,7 +143,7 @@ const ProjectPage = () => {
                     rel="noreferrer"
                   >
                     <li className={"flex flex-col itmes-center justify-center py-2 md:px-4"}>
-                      <img src={user.profile_picture} alt="" className={"w-12 h-12 rounded-full"} />
+                      <Image src={user.profile_picture} alt={"profile picture"} width={20} height={20} className={"rounded-full"}/>
                       <span>{user.name}</span>
                     </li>
                   </a>
@@ -152,7 +153,7 @@ const ProjectPage = () => {
           </section>
           <section className={""}>
             {data.images?.map((image: any, index: number) => (
-              <img key={image._id} src={image.source} alt={""} className={"py-4"} />
+              <Image key={image._id} src={image.source} alt={"project characteristics"} width={2000} height={2000} className={"py-4"}/>
             ))}
           </section>
           {data._id?.length >= 0 ? <BottomBanner label={"Other projects"} />: null}
