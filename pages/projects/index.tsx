@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -9,18 +8,21 @@ import useMenu from '@/contexts/useMenu';
 import { useBodyScroll, useBodyScrollLock } from '@/hooks/useBodyScroll';
 import IProject from '@/types/project';
 
-
-interface IProps {
-	projectsStateData: IProject[];
-}
-
-const ProjectsPage: NextPage<IProps> = ({projectsStateData}) => {
+const ProjectsPage = () => {
+	const [projectsStateData, setProjectsStateData] = useState([]);
 	const [previewImageSrc, setPreviewImageSrc] = useState('');
 
 	const previewImgRef = useRef(null);
 	const titleRef = useRef(null);
 	const descriptionRef = useRef(null);
 	const listRef = useRef(null);
+
+	const handleFetchProjectsData = async () => {
+		const response = await fetch('/api/projects');
+		const json = await response.json();
+		const sortedJson = json.data.sort((p1: IProject, p2: IProject) => (p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0));
+		setProjectsStateData(sortedJson);
+	};
 
 	const handleAnimatePreview = () => {
 		gsap.fromTo(previewImgRef.current, { opacity: 0 }, { opacity: 100, duration: 2, ease: 'power4.in' });
@@ -38,7 +40,7 @@ const ProjectsPage: NextPage<IProps> = ({projectsStateData}) => {
 
 	useEffect(() => {
 		handleAnimate();
-		// handleFetchProjectsData();
+		handleFetchProjectsData();
 	}, []);
 
 	const { isOpen } = useMenu();
@@ -94,16 +96,3 @@ const ProjectsPage: NextPage<IProps> = ({projectsStateData}) => {
 };
 
 export default ProjectsPage;
-
-export const getServerSideProps: GetServerSideProps<any> = async ({ req }) => {
-	const host: any = req.headers['x-forwarded-host'] || req.headers;
-
-	const response = await fetch(`https://${host.host}/api/projects`);
-	const json = await response.json();
-	const sortedJson = json.data.sort((p1: IProject, p2: IProject) => (p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0));
-	return {
-		props: {
-			projectsStateData: sortedJson,
-		}
-	}
-};
