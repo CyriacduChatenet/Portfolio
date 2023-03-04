@@ -10,7 +10,7 @@ import BottomBanner from '@/components/bottomBanner';
 import IProject, { IImage, Mission, User } from '@/types/project';
 
 const ProjectPage = () => {
-	const [data, setData] = useState<IProject>({});
+	const [data, setData] = useState<any | IProject>({});
 	const [openModal, setOpenModal] = useState(false);
 
 	const { isOpen } = useMenu();
