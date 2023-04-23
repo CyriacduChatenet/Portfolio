@@ -106,8 +106,8 @@ const ProjectPage = () => {
 											<Image
 												src={user.profile_picture}
 												alt={'profile picture'}
-												width={20}
-												height={20}
+												width={60}
+												height={60}
 												className={'rounded-full'}
 											/>
 											<span>{user.name}</span>
