@@ -64,7 +64,7 @@ const ProjectsPage = () => {
 						</p>
 					</div>
 					<div className={'flex flex-col lg:flex-row xl:mt-10'}>
-						{window.innerWidth > 1024 && <Image src={previewImageSrc} alt={''} width={800} height={800} className={'rounded-xl'} ref={previewImgRef}/>}
+						{window.innerWidth > 1024 as any && <Image src={previewImageSrc} alt={''} width={800} height={800} className={'rounded-xl'} ref={previewImgRef}/>}
 						<ul className={'xl:pl-40'} ref={listRef}>
 							{projectsStateData.map((project:  IProject, index: number) => (
 								<li
