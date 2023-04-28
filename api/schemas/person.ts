@@ -19,6 +19,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'website',
+      title: 'Website',
+      type: 'url',
+    },
+    {
       name: 'projects',
       title: 'Projects',
       type: 'array',
