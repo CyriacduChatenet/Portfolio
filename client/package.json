@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/client": "^5.4.2",
+    "@sanity/image-url": "^1.0.2",
     "@types/mongoose": "^5.11.97",
     "@types/node": "18.11.12",
     "@types/react": "18.0.26",
