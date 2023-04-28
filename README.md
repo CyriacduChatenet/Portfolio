@@ -4,17 +4,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/docs/)
 [![next](https://img.shields.io/badge/Next.js-20232A?style=for-the-badge&logo=nextdotjs&logoColor=FFFFFF)](https://nextjs.org/)
 [![Tailwind.CSS](https://img.shields.io/badge/TailwindCSS-16a1ba?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://www.typescriptlang.org/docs/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)]()
-[![docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Sanity](https://img.shields.io/badge/Sanity-F03F2E?style=for-the-badge&logo=sanity_studio&logoColor=white)](https://sanity.io/)
 
 ## Env example
 
 ```bash
-MONGODB_URL = mongodb://mongoroot:mongoroot@localhost:27017/
-MONGO_INITDB_ROOT_USERNAME = mongoroot
-MONGO_INITDB_ROOT_PASSWORD = mongoroot
-MONGO_INITDB_DATABASE = test
-MONGO_PORT = 27017
 WAKATIME_URL = 
 ```
 
