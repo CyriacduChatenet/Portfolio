@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -7,9 +7,15 @@ import Layout from '@/components/layout';
 import useMenu from '@/contexts/useMenu';
 import { useBodyScroll, useBodyScrollLock } from '@/hooks/useBodyScroll';
 import IProject from '@/types/project';
+import sanity from '@/lib/sanity';
+import { sanityUrlFor } from '@/lib/sanity-image';
 
-const ProjectsPage = () => {
-	const [projectsStateData, setProjectsStateData] = useState([]);
+interface IProps {
+	projects: IProject[];
+}
+
+const ProjectsPage: FC<IProps> = ({ projects }) => {
+	console.log(projects);
 	const [previewImageSrc, setPreviewImageSrc] = useState('');
 
 	const previewImgRef = useRef(null);
@@ -33,6 +39,7 @@ const ProjectsPage = () => {
 
 	useEffect(() => {
 		handleAnimate();
+
 	}, []);
 
 	const { isOpen } = useMenu();
@@ -49,7 +56,7 @@ const ProjectsPage = () => {
 				<div className={'px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-12'}>
 					<div className={'pt-20 pb-10'}>
 						<h1 className={'font-secondary uppercase text-blue text-6xl sm:text-6xl xl:text-8xl'} ref={titleRef}>
-							Projects <span className="text-2xl">{projectsStateData.length}</span>
+							Projects <span className="text-2xl">{projects.length}</span>
 						</h1>
 						<p className={'text-sm lg:text-base'} ref={descriptionRef}>
 							Some cool projects i’ve done in school or my work internship
@@ -58,22 +65,22 @@ const ProjectsPage = () => {
 					<div className={'flex flex-col lg:flex-row xl:mt-10'}>
 						<Image src={previewImageSrc} alt={''} width={800} height={800} className={'rounded-xl'} ref={previewImgRef}/>
 						<ul className={'xl:pl-40'} ref={listRef}>
-							{projectsStateData.map((project:  IProject, index: number) => (
+							{projects.sort((a, b) => b.year - a.year).map((project:  IProject, index: number) => (
 								<li
 									key={project._id}
 									className={'uppercase text-base border-b-[1px] border-solid border-black pb-2 my-4'}
 									onMouseEnter={() => {
 										handleAnimatePreview();
-										setPreviewImageSrc(project.thumbnail);
+										setPreviewImageSrc(sanityUrlFor(project.thumbnail.asset._ref).url());
 									}}
 									onMouseLeave={() => {
 										handleUnanimatePreview();
 										setPreviewImageSrc('');
 									}}
 								>
-									<Link href={`/project/${project.link_title}`} className={''}>
+									<Link href={`/project/${project.slug.current}`} className={''}>
 										<span>
-											<b>{project.title}</b>&nbsp; - &nbsp;{project.category}
+											<b>{project.title}</b>&nbsp; - &nbsp;{project.categories.map((category: { name: string}) => category.name).join(', ')}&nbsp;
 										</span>
 										<div className={''}></div>
 									</Link>
@@ -88,3 +95,22 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
+
+const projectQuery = `*[_type == "project"] {
+	_id,
+	title,
+	slug,
+	year,
+	"categories": categories[]->{
+	  _id,
+	  name
+	},
+	thumbnail,
+  }`;
+
+  export const getStaticProps = async () => {
+	const projects = await sanity.fetch(projectQuery);
+	return {
+	  props: { projects },
+	};
+  };

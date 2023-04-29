@@ -4,14 +4,9 @@ const nextConfig = {
 	swcMinify: true,
 	images: {
 		domains: [
-			'avatars.githubusercontent.com',
-			'raw.githubusercontent.com',
-			'media-exp1.licdn.com',
-			'mir-s3-cdn-cf.behance.net',
-			'annuaire.frenchtechbordeaux.com',
-			'secure.meetupstatic.com',
+			'cdn.sanity.io',
 			'cyriac.descubes-du-chatenet.com',
-			'localhost',
+			'localhost'
 		],
 	},
 };
