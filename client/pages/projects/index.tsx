@@ -17,13 +17,6 @@ const ProjectsPage = () => {
 	const descriptionRef = useRef(null);
 	const listRef = useRef(null);
 
-	const handleFetchProjectsData = async () => {
-		const response = await fetch('/api/projects');
-		const json = await response.json();
-		const sortedJson = json.data.sort((p1: IProject, p2: IProject) => (p1.year < p2.year ? 1 : p1.year > p2.year ? -1 : 0));
-		setProjectsStateData(sortedJson);
-	};
-
 	const handleAnimatePreview = () => {
 		gsap.fromTo(previewImgRef.current, { opacity: 0 }, { opacity: 100, duration: 2, ease: 'power4.in' });
 	};
@@ -40,7 +33,6 @@ const ProjectsPage = () => {
 
 	useEffect(() => {
 		handleAnimate();
-		handleFetchProjectsData();
 	}, []);
 
 	const { isOpen } = useMenu();

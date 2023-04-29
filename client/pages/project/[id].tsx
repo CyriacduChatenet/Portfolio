@@ -24,12 +24,6 @@ const ProjectPage = () => {
 	useBodyScroll(isOpen);
 	useBodyScrollLock(isOpen);
 
-	const handleFetchData = async () => {
-		const response = await fetch(`/api/${window.location.pathname}`);
-		const json = await response.json();
-		setData(json.data);
-	};
-
 	const handleAnimate = () => {
 		gsap.fromTo(titleRef.current, { opacity: 0 }, { opacity: 100, duration: 3, ease: 'power4.in', delay: 1 });
 		gsap.fromTo(carouselRef.current, { opacity: 0 }, { opacity: 100, duration: 3, ease: 'power4.in', delay: 1.5 });
@@ -39,7 +33,6 @@ const ProjectPage = () => {
 	};
 
 	useEffect(() => {
-		handleFetchData();
 		handleAnimate();
 	}, []);
 

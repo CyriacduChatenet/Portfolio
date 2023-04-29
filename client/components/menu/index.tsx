@@ -1,15 +1,16 @@
-import { NextComponentType } from "next";
 import Link from "next/link";
 import gsap from "gsap";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { FC, MutableRefObject, useRef, useState } from "react";
 
 import useMenu from "@/contexts/useMenu";
 import useAnimateMenu from "@/hooks/animations/useAnimateMenu";
-import IProject from "@/types/project";
+
+interface IProps {
+  length: number;
+};
 
 
-const Menu: NextComponentType = () => {
-   const [projectsStateData, setProjectsStateData] = useState<any>({});
+const Menu: FC<IProps> = ({ length }) => {
 
 
   const homeMenuEntry = useRef(null);
@@ -33,12 +34,6 @@ const Menu: NextComponentType = () => {
     aboutMenuEntry,
   ]);
 
-  const handleFetchData = async () => {
-    const response = await fetch('/api/projects');
-    const json = await response.json();
-    setProjectsStateData(json);
-  };
-
   const handleLineAnimate = (target : MutableRefObject<null>) => {
     gsap.fromTo(target.current, {width: 0}, {width: '60%', duration: 0.5, ease: 'power4.in'});
   };
@@ -46,12 +41,6 @@ const Menu: NextComponentType = () => {
   const handleLineUnanimate = (target: MutableRefObject<null>) => {
     gsap.fromTo(target.current, {width: '60%'}, {width: 0, duration: 0.5, ease: 'power4.in'});
   };
-
-  const length = projectsStateData.data?.length;
-
-  useEffect(() => {
-    handleFetchData();
-  }, []);
 
   return (
     <div className={'absolute z-20 w-screen h-screen bg-dark'} ref={menuContainer}>
