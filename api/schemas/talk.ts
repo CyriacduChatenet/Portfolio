@@ -8,6 +8,11 @@ export default {
             type: 'string',
             title: 'Title',
           },
+        {
+            name: 'subtitle',
+            type: 'string',
+            title: 'Subitle',
+          },
           {
             title: 'Slug',
             name: 'slug',
@@ -17,6 +22,21 @@ export default {
               maxLength: 200,
               slugify: (input: string) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
             },
+          },
+          {
+            name: 'thumbnail',
+            type: 'image',
+            title: 'Thumbnail',
+            options: {
+              hotspot: true, // <-- Defaults to false
+            },
+            fields: [
+              {
+                name: 'attribution',
+                type: 'string',
+                title: 'Attribution',
+              },
+            ],
           },
           {
             "name": "categories",
@@ -42,6 +62,21 @@ export default {
             name: 'description',
             type: 'text',
             title: 'Description',
+          },
+          {
+            name: 'linkedin',
+            type: 'url',
+            title: 'LinkedIn',
+          },
+          {
+            name: 'youtube',
+            type: 'url',
+            title: 'Youtube',
+          },
+          {
+            name: 'website',
+            type: 'url',
+            title: 'Website',
           },
           {
             "name": "persons",
