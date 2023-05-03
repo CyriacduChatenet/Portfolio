@@ -4,9 +4,14 @@ export default {
     title: 'Skill',
     fields: [
         {
-            name: 'title',
+            name: 'name',
             type: 'string',
-            title: 'Title',
+            title: 'Name',
+        },
+        {
+            name: 'link',
+            type: 'url',
+            title: 'Documentation Link',
         },
     ],
 }
