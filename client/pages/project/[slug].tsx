@@ -12,7 +12,7 @@ import sanity from "@/lib/sanity";
 import { sanityUrlFor } from "@/lib/sanity-image";
 
 interface IProps {
-  project: IProject;
+  project: any;
 }
 
 const ProjectPage: FC<IProps> = ({ project }) => {
@@ -108,7 +108,7 @@ const ProjectPage: FC<IProps> = ({ project }) => {
               </h2>
               <div className={"pt-4 pl-4"}>
                 <a
-                  href={project.website}
+                  href={project.website_url}
                   className={"flex items-center"}
                   target={"_blank"}
                   rel="noreferrer"
@@ -165,38 +165,40 @@ const ProjectPage: FC<IProps> = ({ project }) => {
                   "pt-4 w-full flex flex-col md:flex-row items-center justify-around flex-wrap"
                 }
               >
-                {project.persons?.map((user: User, index: number) => (
+                {project.persons?.map((person: any) => (
                   <li
-					key={index}
+                    key={person._id}
                     className={
                       "flex flex-col itmes-center justify-center py-2 md:px-4"
                     }
                   >
-                    <Image
-                      src={sanityUrlFor(user.image.asset._ref).url()}
-                      alt={"profile picture"}
-                      width={60}
-                      height={60}
-                      className={"rounded-full"}
-                    />
-                    <span>{user.name}</span>
+                    <a href={person.linkedin} target="__blank">
+                      <Image
+                        src={sanityUrlFor(person.image.asset._ref).url()}
+                        alt={"profile picture"}
+                        width={60}
+                        height={60}
+                        className={"rounded-full"}
+                      />
+                      <span>{person.name}</span>
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           </section>
-		  <section className={''}>
-						{project.pictures?.map((picture: any) => (
-							<Image
-								key={picture._id}
-								src={sanityUrlFor(picture.image.asset._ref).url()}
-								alt={'project characteristics'}
-								width={2000}
-								height={2000}
-								className={'py-4'}
-							/>
-						))}
-					</section>
+          <section className={""}>
+            {project.pictures?.map((picture: any) => (
+              <Image
+                key={picture._id}
+                src={sanityUrlFor(picture.image.asset._ref).url()}
+                alt={"project characteristics"}
+                width={2000}
+                height={2000}
+                className={"py-4"}
+              />
+            ))}
+          </section>
           {String(project._id).length >= 0 ? (
             <BottomBanner label={"Other projects"} />
           ) : null}

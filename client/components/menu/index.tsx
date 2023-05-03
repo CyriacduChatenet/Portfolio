@@ -58,10 +58,8 @@ const Menu = () => {
 
     const projects = await sanity.fetch(projectQuery);
     const talks = await sanity.fetch(talkQuery);
-    console.log(projects);
-    console.log(talks);
-    // setProjectLength(projects.length);
-    // setTalkLength(talks.length);
+    setProjectLength(projects.length);
+    setTalkLength(talks.length);
   };
 
   useEffect(() => {
@@ -144,3 +142,19 @@ const Menu = () => {
 };
 
 export default Menu;
+
+
+const projectQuery = `*[_type == "project"] {
+	_id,
+	title,
+	slug,
+	"categories": categories[]->,
+	thumbnail
+  }`;
+
+  export const getStaticProps = async () => {
+	const projects = await sanity.fetch(projectQuery);
+	return {
+	  props: { projects },
+	};
+  };

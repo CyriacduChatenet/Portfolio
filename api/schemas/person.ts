@@ -9,6 +9,11 @@ export default {
         title: "Name",
       },
       {
+        name: "linkedin",
+        type: "url",
+        title: "LinkedIn",
+      },
+      {
         name: "role",
         type: "string",
         title: "Role",
@@ -27,21 +32,6 @@ export default {
             title: 'Attribution',
           },
         ],
-      },
-      {
-        name: "social_networks",
-        title: "Social Networks",
-        type: "array",
-        of: [
-          {
-            type: "reference",
-            to: [
-              {
-                type: "social_network"
-              }
-            ]
-          }
-        ]
       },
       {
         name: "projects",
