@@ -79,14 +79,19 @@ export default {
             ]
           },
           {
-            name: 'team',
-            type: 'reference',
-            to: [
+            name: "persons",
+            title: "Persons",
+            type: "array",
+            of: [
               {
-                "type": "team"
+                type: "reference",
+                to: [
+                  {
+                    type: "person"
+                  }
+                ]
               }
-            ],
-            title: 'Team',
+            ]
           },
           {
             name: "pictures",

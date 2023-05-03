@@ -58,8 +58,10 @@ const Menu = () => {
 
     const projects = await sanity.fetch(projectQuery);
     const talks = await sanity.fetch(talkQuery);
-    setProjectLength(projects.length);
-    setTalkLength(talks.length);
+    console.log(projects);
+    console.log(talks);
+    // setProjectLength(projects.length);
+    // setTalkLength(talks.length);
   };
 
   useEffect(() => {

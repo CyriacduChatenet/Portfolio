@@ -15,7 +15,6 @@ interface IProps {
 }
 
 const ProjectsPage: FC<IProps> = ({ projects }) => {
-	console.log(projects);
 	const [previewImageSrc, setPreviewImageSrc] = useState('');
 
 	const previewImgRef = useRef(null);
@@ -100,12 +99,8 @@ const projectQuery = `*[_type == "project"] {
 	_id,
 	title,
 	slug,
-	year,
-	"categories": categories[]->{
-	  _id,
-	  name
-	},
-	thumbnail,
+	"categories": categories[]->,
+	thumbnail
   }`;
 
   export const getStaticProps = async () => {

@@ -185,18 +185,18 @@ const ProjectPage: FC<IProps> = ({ project }) => {
               </ul>
             </div>
           </section>
-		  {/* <section className={''}>
+		  <section className={''}>
 						{project.pictures?.map((picture: any) => (
 							<Image
 								key={picture._id}
-								src={sanityUrlFor(picture.asset._ref).url()}
+								src={sanityUrlFor(picture.image.asset._ref).url()}
 								alt={'project characteristics'}
 								width={2000}
 								height={2000}
 								className={'py-4'}
 							/>
 						))}
-					</section> */}
+					</section>
           {String(project._id).length >= 0 ? (
             <BottomBanner label={"Other projects"} />
           ) : null}
@@ -214,31 +214,14 @@ const singleprojectQuery = `*[_type == "project" && slug.current == $slug] {
 	_id,
 	title,
 	slug,
-	thumbnail,
-	description,
-	website,
 	year,
-	"categories": categories[]->{
-	  _id,
-	  name
-	},
-	"missions": missions[]->{
-	  _id,
-	},
-	"persons": persons[]->{
-		_id,
-		name,
-		image,
-		"socialNetworks": socialNetworks[]->{
-			_id,
-			name,
-			url,
-		  },
-	  },
-	"pictures": pictures[]->{
-	  _id,
-	  picture,
-	},
+	description,
+	website_url,
+	"categories": categories[]->,
+	"missions": missions[]->,
+	"pictures": pictures[]->,
+  "persons": persons[]->,
+	thumbnail
 }[0]
 `;
 

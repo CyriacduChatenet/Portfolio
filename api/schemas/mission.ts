@@ -9,6 +9,11 @@ export default {
       title: 'Title',
     },
     {
+      name: 'type',
+      type: 'string',
+      title: 'Type',
+    },
+    {
       name: 'projects',
       title: 'Projects',
       type: 'array',
@@ -22,16 +27,6 @@ export default {
           ],
         },
       ],
-    },
-    {
-      name: 'category',
-      type: 'reference',
-      to: [
-        {
-          type: 'category',
-        },
-      ],
-      title: 'Category',
     },
   ],
 }

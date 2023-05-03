@@ -38,20 +38,5 @@ export default {
         },
       ],
     },
-    {
-      name: 'missions',
-      title: 'Missions',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [
-            {
-              type: 'mission',
-            },
-          ],
-        },
-      ],
-    },
   ],
 }

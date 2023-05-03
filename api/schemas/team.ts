@@ -4,6 +4,11 @@ export default {
   title: 'Team',
   fields: [
     {
+      name: 'name',
+      type: 'string',
+      title: 'Name',
+    },
+    {
       name: "persons",
       title: "Persons",
       type: "array",

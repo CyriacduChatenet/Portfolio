@@ -7,6 +7,5 @@ import project from "./project";
 import skill from "./skill";
 import socialNetwork from "./socialNetwork";
 import talk from "./talk";
-import team from "./team";
 
-export const schemaTypes = [project, picture, mission, category, team, person, socialNetwork, talk, about, skill]
+export const schemaTypes = [project, picture, mission, category, person, socialNetwork, talk, about, skill]
