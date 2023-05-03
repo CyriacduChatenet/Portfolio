@@ -1,6 +1,4 @@
 # Portfolio
-
-
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/docs/)
 [![next](https://img.shields.io/badge/Next.js-20232A?style=for-the-badge&logo=nextdotjs&logoColor=FFFFFF)](https://nextjs.org/)
 [![Tailwind.CSS](https://img.shields.io/badge/TailwindCSS-16a1ba?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://www.typescriptlang.org/docs/)
@@ -12,7 +10,7 @@
 WAKATIME_URL = 
 ```
 - [Website](https://www.cyriac-descubes-du-chatenet.com)
-- [CMS](https://cyriac-descubes-du-chatenet-portfolio.sanity.studio/)
+- [CMS](https://portfolio-cyriac-descubes-du-chatenet.sanity.studio/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
