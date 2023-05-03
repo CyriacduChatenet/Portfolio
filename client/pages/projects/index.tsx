@@ -64,7 +64,7 @@ const ProjectsPage: FC<IProps> = ({ projects }) => {
 					<div className={'flex flex-col lg:flex-row xl:mt-10'}>
 						<Image src={previewImageSrc} alt={''} width={800} height={800} className={'rounded-xl'} ref={previewImgRef}/>
 						<ul className={'xl:pl-40'} ref={listRef}>
-							{projects.sort((a, b) => b.year - a.year).map((project:  IProject, index: number) => (
+							{projects.sort((a, b) => b.year - a.year).map((project:  any, index: number) => (
 								<li
 									key={project._id}
 									className={'uppercase text-base border-b-[1px] border-solid border-black pb-2 my-4'}

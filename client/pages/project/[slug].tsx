@@ -142,7 +142,7 @@ const ProjectPage: FC<IProps> = ({ project }) => {
                 Mission
               </h2>
               <ul className={"pt-4"}>
-                {project.missions?.map((mission: Mission) => (
+                {project.missions?.map((mission: any) => (
                   <li key={mission._id} className="py-2">
                     {mission.type} : {mission.title}
                   </li>
