@@ -1,37 +1,38 @@
 export default {
-  name: 'social_network',
-  type: 'document',
-  title: 'Social Network',
-  fields: [
-    {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
-    },
-    {
-      name: 'image',
-      type: 'image',
-      title: 'image',
-      options: {
-        hotspot: true, // <-- Defaults to false
+    name: 'social_network',
+    type: 'document',
+    title: 'Social Network',
+    fields: [
+      {
+        name: 'title',
+        type: 'string',
+        title: 'Title',
       },
-      fields: [
-        {
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
+      {
+        name: 'image',
+        type: 'image',
+        title: 'image',
+        options: {
+          hotspot: true, // <-- Defaults to false
         },
-      ],
-    },
-    {
-      name: 'person',
-      type: 'reference',
-      to: [
-        {
-          type: 'person',
-        },
-      ],
-      title: 'Person',
-    },
-  ],
-}
+        fields: [
+          {
+            name: 'attribution',
+            type: 'string',
+            title: 'Attribution',
+          },
+        ],
+      },
+      {
+        name: 'person',
+        type: 'reference',
+        to: [
+          {
+            type: 'person',
+          },
+        ],
+        title: 'Person',
+      },
+    ],
+  }
+  

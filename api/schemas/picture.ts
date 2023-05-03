@@ -1,37 +1,38 @@
 export default {
-  name: 'picture',
-  type: 'document',
-  title: 'Picture',
-  fields: [
-    {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
-    },
-    {
-      name: 'image',
-      type: 'image',
-      title: 'image',
-      options: {
-        hotspot: true, // <-- Defaults to false
+    name: 'picture',
+    type: 'document',
+    title: 'Picture',
+    fields: [
+      {
+        name: 'title',
+        type: 'string',
+        title: 'Title',
       },
-      fields: [
-        {
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
+      {
+        name: 'image',
+        type: 'image',
+        title: 'image',
+        options: {
+          hotspot: true, // <-- Defaults to false
         },
-      ],
-    },
-    {
-      name: 'project',
-      title: 'Project',
-      type: 'reference',
-      to: [
-        {
-          type: 'project',
-        },
-      ],
-    },
-  ],
-}
+        fields: [
+          {
+            name: 'attribution',
+            type: 'string',
+            title: 'Attribution',
+          },
+        ],
+      },
+      {
+        name: 'project',
+        title: 'Project',
+        type: 'reference',
+        to: [
+          {
+            type: 'project',
+          },
+        ],
+      },
+    ],
+  }
+  
