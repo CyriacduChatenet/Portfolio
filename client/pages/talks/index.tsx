@@ -94,7 +94,7 @@ const TalksPage: FC<IProps> = ({ talks }) => {
               "my-9 flex flex-col lg:flex-row justify-center itmes-center h-96"
             }
           >
-            <Image src={previewImageSrc} alt={""} width={700} height={700} ref={previewRef}/>
+            <Image src={previewImageSrc} alt={""} width={700} height={700} ref={previewRef} priority />
             <ul className={"mt-4 lg:pl-12"}>
               {talks.map((talk) => (
                 <li

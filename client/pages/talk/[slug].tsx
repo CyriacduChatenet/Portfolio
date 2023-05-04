@@ -93,7 +93,7 @@ const TalkPage: FC<IProps> = ({ talk }) => {
                 {talk.persons.map((person: any) => (
                   <li key={person._id}>
                     <a href={person.linkedin} target="__blank">
-                      <Image src={sanityUrlFor(person.image.asset._ref).url()} alt={person.name} width={60} height={0} className={'rounded-full'}/>
+                      <Image src={sanityUrlFor(person.image.asset._ref).url()} alt={person.name} width={60} height={0} className={'rounded-full'}  priority />
                       <p>{person.name}</p>
                     </a>
                   </li>

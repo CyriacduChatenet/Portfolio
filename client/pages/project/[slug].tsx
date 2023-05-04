@@ -92,6 +92,7 @@ const ProjectPage: FC<IProps> = ({ project }) => {
               width={800}
               height={800}
               className={"rounded-lg"}
+              priority
             />
           </div>
           <section className={"my-8 flex flex-col lg:flex-row"}>
@@ -179,6 +180,7 @@ const ProjectPage: FC<IProps> = ({ project }) => {
                         width={60}
                         height={60}
                         className={"rounded-full"}
+                        priority
                       />
                       <span>{person.name}</span>
                     </a>
