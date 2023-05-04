@@ -98,6 +98,7 @@ export default ProjectsPage;
 const projectQuery = `*[_type == "project"] {
 	_id,
 	title,
+	year,
 	slug,
 	"categories": categories[]->,
 	thumbnail
