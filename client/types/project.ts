@@ -29,7 +29,13 @@ interface IProject {
     year: number;
     website_url: string;
     link_title: string;
-    thumbnail: string;
+    thumbnail: {
+        _type: string;
+        asset: {
+            _ref: string;
+            _type: string;
+        }
+    };
     category: string;
     about: string;
     images: Image[];
