@@ -4,7 +4,6 @@ import gsap from "gsap";
 import BaselineFooter from "@/components/baselineFooter";
 import Layout from "@/components/layout";
 import Loader from "@/components/loader";
-import Cubes from "@/components/home/cubes";
 import { useLoader } from "@/contexts/useLoader";
 import useMenu from "@/contexts/useMenu";
 import { useBodyScroll, useBodyScrollLock } from "@/hooks/useBodyScroll";
@@ -24,12 +23,12 @@ const HomePage = () => {
     gsap.fromTo(
       creativeTitle.current,
       { opacity: 0, x: -20 },
-      { delay: 4, duration: 6, ease: "power4.inOut", opacity: 100, x: 0 }
+      { delay: 4, duration: 3, ease: "power4.inOut", opacity: 100, x: 0 }
     );
     gsap.fromTo(
       developerTitle.current,
       { opacity: 0, x: -20 },
-      { delay: 4, duration: 6, ease: "power4.inOut", opacity: 100, x: 0 }
+      { delay: 4, duration: 3, ease: "power4.inOut", opacity: 100, x: 0 }
     );
   };
 
@@ -50,10 +49,8 @@ const HomePage = () => {
         <div
           className={"px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 2xl:px-24 py-8"}
         >
-          <Cubes />
           <main
-            className={"flex flex-col justify-between w-full"}
-            style={{ height: "80vh", zIndex: 3 }}
+            className={"flex flex-col justify-between w-full h-[85vh]"}
           >
             <div
               className={"flex flex-col item-center justify-center h-1/2 mt-40"}

@@ -31,14 +31,14 @@ const ProjectsPage: FC<IProps> = ({ projects }) => {
 	};
 
 	const handleAnimate = () => {
-		gsap.fromTo(titleRef.current, { opacity: 0 }, { opacity: 100, duration: 2, ease: 'power4.in', delay: 1 });
-		gsap.fromTo(descriptionRef.current, { opacity: 0 }, { opacity: 100, duration: 2.5, ease: 'power4.in', delay: 1 });
-		gsap.fromTo(listRef.current, { opacity: 0 }, { opacity: 100, duration: 3, ease: 'power4.in', delay: 1 });
+		gsap.fromTo(titleRef.current, { opacity: 0 }, { opacity: 100, duration: 1, ease: 'power4.in', delay: 1 });
+		gsap.fromTo(descriptionRef.current, { opacity: 0 }, { opacity: 100, duration: 1.5, ease: 'power4.in', delay: 1 });
+		gsap.fromTo(listRef.current, { opacity: 0 }, { opacity: 100, duration: 2, ease: 'power4.in', delay: 1 });
 	};
 
 	useEffect(() => {
 		handleAnimate();
-
+		console.log();
 	}, []);
 
 	const { isOpen } = useMenu();
@@ -62,9 +62,9 @@ const ProjectsPage: FC<IProps> = ({ projects }) => {
 						</p>
 					</div>
 					<div className={'flex flex-col lg:flex-row xl:mt-10'}>
-						<Image src={previewImageSrc} alt={''} width={800} height={800} className={'rounded-xl'} ref={previewImgRef}  priority/>
+						<Image src={previewImageSrc.length < 1 ? sanityUrlFor(projects.slice().sort((a, b) => b.year - a.year)[0].thumbnail.asset._ref).url() : previewImageSrc} alt={''} width={800} height={800} className={'rounded-xl'} ref={previewImgRef}  priority/>
 						<ul className={'xl:pl-40'} ref={listRef}>
-							{projects.sort((a, b) => b.year - a.year).map((project:  any, index: number) => (
+							{projects.slice().sort((a, b) => b.year - a.year).map((project:  any, index: number) => (
 								<li
 									key={project._id}
 									className={'uppercase text-base border-b-[1px] border-solid border-black pb-2 my-4'}
